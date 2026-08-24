@@ -1,6 +1,39 @@
 [gd_scene format=3 uid="uid://brgtvgcgu52xb"]
 
+[ext_resource type="Texture2D" uid="uid://bfph75i3skap3" path="res://assets/carept01.png" id="1_ig7tw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_chrx7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijsla"]
+albedo_texture = ExtResource("1_ig7tw")
+uv1_scale = Vector3(45.835, 45.835, 45.835)
+uv2_scale = Vector3(1.08, 1.08, 1.08)
+
 [node name="Node3D" type="Node3D" unique_id=586525987]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=517493607]
+environment = SubResource("Environment_h2yge")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=635607928]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1588991838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4455512, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2126053060]
+transform = Transform3D(10.917521, 0, 0, 0, 1, 0, 0, 0, 10.562249, 0, 0, -6.1470747)
+mesh = SubResource("PlaneMesh_chrx7")
+surface_material_override/0 = SubResource("StandardMaterial3D_ijsla")
