@@ -22,7 +22,7 @@ uv1_scale = Vector3(45.835, 45.835, 45.835)
 uv2_scale = Vector3(1.08, 1.08, 1.08)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
-size = Vector3(1.7929688, 5.0573425, 2.5114746)
+size = Vector3(1.6899414, 5.0573425, 2.5114746)
 
 [node name="Node3D" type="Node3D" unique_id=586525987]
 
@@ -47,4 +47,8 @@ mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1865373019]
 transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 8.29049, -9.968021, 3.7824442, -6.265433)
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=9968653]
+transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 0.38906533, 0, 0.3966664, 0, -3.5092674e-07, 0.097753525, 0.40398097, -2.110262)
 mesh = SubResource("BoxMesh_g4v7s")
