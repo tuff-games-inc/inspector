@@ -21,6 +21,9 @@ albedo_texture = ExtResource("1_ig7tw")
 uv1_scale = Vector3(45.835, 45.835, 45.835)
 uv2_scale = Vector3(1.08, 1.08, 1.08)
 
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(1.7929688, 5.0573425, 2.5114746)
+
 [node name="Node3D" type="Node3D" unique_id=586525987]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=517493607]
@@ -37,3 +40,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4455512, 0)
 transform = Transform3D(10.917521, 0, 0, 0, 1, 0, 0, 0, 10.562249, 0, 0, -6.1470747)
 mesh = SubResource("PlaneMesh_chrx7")
 surface_material_override/0 = SubResource("StandardMaterial3D_ijsla")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=447618794]
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 8.29049, 10.455683, 3.7824442, -6.265433)
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1865373019]
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 8.29049, -9.968021, 3.7824442, -6.265433)
+mesh = SubResource("BoxMesh_g4v7s")
