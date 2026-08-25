@@ -1,9 +1,10 @@
 extends Node2D
 
 var day: int = 0
+@onready var day_counter = $Day
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	day_counter.text = "Day 0"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,7 +13,8 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	print("timer up")
+	print("day ended")
 	day += 1
-	print(day)	
+	var day_string = "Day %s"
+	day_counter.text = day_string % day
 	pass # Replace with function body.
