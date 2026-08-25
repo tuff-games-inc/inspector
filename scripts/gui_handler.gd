@@ -1,7 +1,7 @@
-extends Node2D
+extends Control
 
 var day: int = 0
-@onready var day_counter = $Day
+@onready var day_counter = $CanvasLayer/Day
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	day_counter.text = "Day 0"

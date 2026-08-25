@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brgtvgcgu52xb"]
 
-[ext_resource type="Script" uid="uid://u1gxo2h6bxmd" path="res://scripts/gui_handler.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://8n5vt78ngkas" path="res://gui_normal.tscn" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://bfph75i3skap3" path="res://assets/carept01.png" id="1_ig7tw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
@@ -15,9 +15,6 @@ background_mode = 2
 sky = SubResource("Sky_0xm2m")
 glow_enabled = true
 
-[sub_resource type="LabelSettings" id="LabelSettings_chrx7"]
-font_size = 40
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_chrx7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijsla"]
@@ -27,11 +24,6 @@ uv2_scale = Vector3(1.08, 1.08, 1.08)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
 size = Vector3(1.6899414, 5.0573425, 2.5114746)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_chrx7"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62d1j"]
-albedo_color = Color(1, 0, 0, 1)
 
 [node name="Node3D" type="Node3D" unique_id=586525987]
 
@@ -45,37 +37,11 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1588991838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4455512, 0)
 
-[node name="GUI" type="Node2D" parent="Camera3D" unique_id=1759227123]
-position = Vector2(4.9834595, 3.652893)
-script = ExtResource("1_0xm2m")
-
-[node name="Day" type="Label" parent="Camera3D/GUI" unique_id=1748189314]
-offset_left = 33.01654
-offset_top = 26.347107
-offset_right = 141.01654
-offset_bottom = 81.34711
-text = "Day Y"
-label_settings = SubResource("LabelSettings_chrx7")
-metadata/_edit_use_anchors_ = true
-
-[node name="Accept" type="Button" parent="Camera3D/GUI" unique_id=814988121]
-offset_left = 237.01654
-offset_top = 504.3471
-offset_right = 417.01654
-offset_bottom = 606.3471
-text = "Accept"
-
-[node name="Deny" type="Button" parent="Camera3D/GUI" unique_id=363083437]
-offset_left = 631.01654
-offset_top = 505.3471
-offset_right = 811.01654
-offset_bottom = 607.3471
-text = "Deny
-"
-
-[node name="Timer" type="Timer" parent="Camera3D/GUI" unique_id=926219055]
-wait_time = 300.0
-autostart = true
+[node name="GUI" parent="Camera3D" unique_id=63124761 instance=ExtResource("1_0xm2m")]
+offset_left = -49.0
+offset_top = 71.0
+offset_right = -49.0
+offset_bottom = 71.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2126053060]
 transform = Transform3D(10.917521, 0, 0, 0, 1, 0, 0, 0, 10.562249, 0, 0, -6.1470747)
@@ -123,10 +89,3 @@ transform = Transform3D(1, 0, 0, 0, 0.0003915588, 0.99999994, 0, -0.99999994, 0.
 
 [node name="AreaLight3D2" type="AreaLight3D" parent="." unique_id=1931238397]
 transform = Transform3D(1, 0, 0, 0, 0.0003915588, 0.99999994, 0, -0.99999994, 0.0003915588, 0, 4.2091675, 0.43545532)
-
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=1072396082]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2726346, 1.0058713, -4.3818326)
-mesh = SubResource("CapsuleMesh_chrx7")
-surface_material_override/0 = SubResource("StandardMaterial3D_62d1j")
-
-[connection signal="timeout" from="Camera3D/GUI/Timer" to="Camera3D/GUI" method="_on_timer_timeout"]

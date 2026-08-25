@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://8n5vt78ngkas"]
+
+[ext_resource type="Script" uid="uid://u1gxo2h6bxmd" path="res://scripts/gui_handler.gd" id="1_aj78p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_chrx7"]
+font_size = 40
+
+[node name="GUI" type="Control" unique_id=63124761]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.9834595
+offset_top = 3.652893
+offset_right = 4.9834595
+offset_bottom = 3.652893
+script = ExtResource("1_aj78p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=837136506]
+
+[node name="Day" type="Label" parent="CanvasLayer" unique_id=1439505825]
+offset_left = 38.0
+offset_top = 30.0
+offset_right = 146.0
+offset_bottom = 85.0
+text = "Day Y"
+label_settings = SubResource("LabelSettings_chrx7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Accept" type="Button" parent="CanvasLayer" unique_id=743478483]
+offset_left = 242.0
+offset_top = 508.0
+offset_right = 422.0
+offset_bottom = 610.0
+text = "Accept"
+
+[node name="Deny" type="Button" parent="CanvasLayer" unique_id=1361840441]
+offset_left = 636.0
+offset_top = 509.0
+offset_right = 816.0
+offset_bottom = 611.0
+text = "Deny
+"
+
+[node name="Timer" type="Timer" parent="CanvasLayer" unique_id=1301567505]
+wait_time = 300.0
+autostart = true
+
+[connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
