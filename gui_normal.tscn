@@ -7,11 +7,11 @@ font_size = 40
 
 [node name="GUI" type="Control" unique_id=63124761]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 4.9834595
-offset_top = 3.652893
-offset_right = 4.9834595
-offset_bottom = 3.652893
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_aj78p")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=837136506]
@@ -21,22 +21,25 @@ offset_left = 38.0
 offset_top = 30.0
 offset_right = 146.0
 offset_bottom = 85.0
+scale = Vector2(1.655, 1.655)
 text = "Day Y"
 label_settings = SubResource("LabelSettings_chrx7")
 metadata/_edit_use_anchors_ = true
 
 [node name="Accept" type="Button" parent="CanvasLayer" unique_id=743478483]
-offset_left = 242.0
-offset_top = 508.0
-offset_right = 422.0
-offset_bottom = 610.0
+offset_left = 589.0
+offset_top = 822.0
+offset_right = 769.0
+offset_bottom = 924.0
+scale = Vector2(1.6799988, 1.6799988)
 text = "Accept"
 
 [node name="Deny" type="Button" parent="CanvasLayer" unique_id=1361840441]
-offset_left = 636.0
-offset_top = 509.0
-offset_right = 816.0
-offset_bottom = 611.0
+offset_left = 983.0
+offset_top = 823.0
+offset_right = 1163.0
+offset_bottom = 925.0
+scale = Vector2(1.6799988, 1.6799988)
 text = "Deny
 "
 
@@ -45,10 +48,11 @@ wait_time = 300.0
 autostart = true
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=2042692372]
-offset_left = 1023.0
-offset_top = 14.0
-offset_right = 1124.0
-offset_bottom = 45.0
+offset_left = 1660.0001
+offset_top = 43.0
+offset_right = 1761.0001
+offset_bottom = 74.0
+scale = Vector2(2.005, 2.005)
 text = "Information"
 
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
