@@ -55,5 +55,6 @@ offset_bottom = 74.0
 scale = Vector2(2.005, 2.005)
 text = "Information"
 
+[connection signal="pressed" from="CanvasLayer/Accept" to="." method="_on_accept_pressed"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

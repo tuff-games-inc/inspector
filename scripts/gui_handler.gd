@@ -4,8 +4,10 @@ extends Control
 @onready var day_counter = $CanvasLayer/Day
 @onready var anim_player = $"../AnimationPlayer"
 @onready var board = $"../GuiNoticeBoard"
+@onready var npc_handler = $"../../NPC"
 # Called when the node enters the scene tree for the first time.
 signal show_notice_board()
+signal accept_pressed()
 func _ready() -> void:
 	day_counter.text = "Day 0"
 	board.show_normal.connect(show_normal)
@@ -43,3 +45,8 @@ func _on_button_pressed() -> void:
 	anim_player.play("camera_tilt_to_board")
 	await anim_player.animation_finished
 	show_notice_board.emit()
+
+
+func _on_accept_pressed() -> void:
+	accept_pressed.emit()
+	
