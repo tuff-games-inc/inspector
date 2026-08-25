@@ -1,6 +1,6 @@
 extends Control
 
-var day: int = 0
+@export var day: int = 0
 @onready var day_counter = $CanvasLayer/Day
 @onready var anim_player = $"../AnimationPlayer"
 @onready var board = $"../GuiNoticeBoard"

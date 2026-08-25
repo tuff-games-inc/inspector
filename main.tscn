@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bfph75i3skap3" path="res://assets/carept01.png" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://diku0ncs7htyi" path="res://gui_notice_board.tscn" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://busm8lw6i02pm" path="res://assets/plant02.png" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://6yu7ntle3u1u" path="res://scripts/npc_handler.gd" id="5_lquwl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,6 +27,30 @@ tracks/0/path = NodePath("Camera3D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NPC:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5.5983496, 1.0064503, -4.3328714)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NPC:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -64,11 +89,69 @@ tracks/0/keys = {
 "values": [Vector3(0, 3.1415927, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_272bh"]
+resource_name = "npc_move_success"
+length = 1.4333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NPC:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.43),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.04994774, 1.0064503, -3.0259557), Vector3(0.04994774, 1.0064503, -3.0259557), Vector3(3.0149794, 1.0064503, -4.5555468), Vector3(4.761639, 1.0064503, -4.5555468)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NPC:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0), Vector3(0, 0.25132108, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7mycd"]
+resource_name = "npc_move_to_counter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NPC:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.52, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-5.5983496, 1.0064503, -4.3328714), Vector3(0.04994774, 1.0064503, -4.3328714), Vector3(0.04994774, 1.0064503, -4.3328714), Vector3(0.04994774, 1.0064503, -3.0259557)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NPC:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -1.5707964, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1bvp3"]
 _data = {
 &"RESET": SubResource("Animation_1bvp3"),
 &"camera_tilt_to_board": SubResource("Animation_h2yge"),
-&"camera_tilt_to_main": SubResource("Animation_lquwl")
+&"camera_tilt_to_main": SubResource("Animation_lquwl"),
+&"npc_move_success": SubResource("Animation_272bh"),
+&"npc_move_to_counter": SubResource("Animation_7mycd")
 }
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_chrx7"]
@@ -163,3 +246,7 @@ transform = Transform3D(1, 0, 0, 0, 0.0003915588, 0.99999994, 0, -0.99999994, 0.
 transform = Transform3D(1.265, 0, 0, 0, -5.5294905e-08, -1.265, 0, 1.265, -5.5294905e-08, 1.741933, 1.0292926, -6.345457)
 mesh = SubResource("PlaneMesh_62d1j")
 surface_material_override/0 = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="NPC" type="Node3D" parent="." unique_id=2123760075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5983496, 1.0064503, -4.3328714)
+script = ExtResource("5_lquwl")
