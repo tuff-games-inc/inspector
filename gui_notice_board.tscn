@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://diku0ncs7htyi"]
+
+[ext_resource type="Texture2D" uid="uid://cujll8rd0q8o0" path="res://assets/notice_board_200.png" id="1_brani"]
+[ext_resource type="Script" uid="uid://y8ii6eg7xjbv" path="res://scripts/gui_notice_board.gd" id="1_qefa7"]
+
+[node name="GuiNoticeBoard" type="Control" unique_id=888936362]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qefa7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=577662873]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=192241594]
+texture_filter = 1
+offset_left = 282.0
+offset_right = 912.0
+offset_bottom = 630.0
+texture = ExtResource("1_brani")
+
+[node name="Back" type="Button" parent="CanvasLayer" unique_id=762727035]
+offset_left = 25.0
+offset_top = 23.0
+offset_right = 70.0
+offset_bottom = 54.0
+text = "Back"
+
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]

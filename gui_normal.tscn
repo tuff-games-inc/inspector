@@ -44,4 +44,12 @@ text = "Deny
 wait_time = 300.0
 autostart = true
 
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=2042692372]
+offset_left = 1023.0
+offset_top = 14.0
+offset_right = 1124.0
+offset_bottom = 45.0
+text = "Information"
+
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
