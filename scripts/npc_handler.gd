@@ -6,6 +6,9 @@ extends Node3D
 var isSpawned = false
 var isMoving = false
 var npc: CharacterBody3D = null
+
+signal change_score(direction: bool)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gui_handler.reply_pressed.connect(_replyHandler)
@@ -40,18 +43,22 @@ func _replyHandler(outcome: bool) -> void:
 			print("succesfully let in")
 			anim_player.play("npc_move_success")
 			await anim_player.animation_finished
+			change_score.emit(true)
 		elif isAllowedIn && !outcome:
 			print("incorrectly denied")
 			anim_player.play("npc_deny")
 			await anim_player.animation_finished
+			change_score.emit(false)
 		elif !isAllowedIn && !outcome:
 			print("succesfully denied")
 			anim_player.play("npc_deny")
 			await anim_player.animation_finished
+			change_score.emit(true)
 		elif !isAllowedIn && outcome:
 			print("incorrectly accepted")
 			anim_player.play("npc_move_success")
 			await anim_player.animation_finished
+			change_score.emit(false)
 		npc.queue_free()
 		isSpawned = false
 	else:
