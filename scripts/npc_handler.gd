@@ -35,9 +35,11 @@ func entity01_spawn() -> void:
 	anim_player.play("npc_move_to_counter")
 	await anim_player.animation_finished
 	isMoving = false
-#
+
 func _replyHandler(outcome: bool) -> void:
-	if !isMoving && isSpawned:
+	if !isSpawned:
+		print("npc not spawnmed")
+	elif !isMoving:
 		var isAllowedIn = npc.IsAllowedIn
 		if isAllowedIn && outcome:
 			print("succesfully let in")
@@ -62,4 +64,4 @@ func _replyHandler(outcome: bool) -> void:
 		npc.queue_free()
 		isSpawned = false
 	else:
-		print("moving")
+		print("npc is still moving")
