@@ -231,6 +231,7 @@ offset_left = -49.0
 offset_top = 71.0
 offset_right = -49.0
 offset_bottom = 71.0
+day = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D" unique_id=223126715]
 root_node = NodePath("../..")
