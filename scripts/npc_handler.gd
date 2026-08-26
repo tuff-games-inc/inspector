@@ -42,10 +42,16 @@ func _replyHandler(outcome: bool) -> void:
 			await anim_player.animation_finished
 		elif isAllowedIn && !outcome:
 			print("incorrectly denied")
+			anim_player.play("npc_deny")
+			await anim_player.animation_finished
 		elif !isAllowedIn && !outcome:
 			print("succesfully denied")
+			anim_player.play("npc_deny")
+			await anim_player.animation_finished
 		elif !isAllowedIn && outcome:
 			print("incorrectly accepted")
+			anim_player.play("npc_move_success")
+			await anim_player.animation_finished
 		npc.queue_free()
 		isSpawned = false
 	else:
