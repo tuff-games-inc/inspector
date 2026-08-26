@@ -8,7 +8,7 @@ var isMoving = false
 var npc: CharacterBody3D = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	gui_handler.accept_pressed.connect(_replyHandler)
+	gui_handler.reply_pressed.connect(_replyHandler)
 	gui_handler.next_pressed.connect(_spawnHandler)
 
 #
@@ -33,10 +33,19 @@ func entity01_spawn() -> void:
 	await anim_player.animation_finished
 	isMoving = false
 #
-func _replyHandler() -> void:
+func _replyHandler(outcome: bool) -> void:
 	if !isMoving:
-		anim_player.play("npc_move_success")
-		await anim_player.animation_finished
+		var isAllowedIn = npc.IsAllowedIn
+		if isAllowedIn && outcome:
+			print("succesfully let in")
+			anim_player.play("npc_move_success")
+			await anim_player.animation_finished
+		elif isAllowedIn && !outcome:
+			print("incorrectly denied")
+		elif !isAllowedIn && !outcome:
+			print("succesfully denied")
+		elif !isAllowedIn && outcome:
+			print("incorrectly accepted")
 		npc.queue_free()
 		isSpawned = false
 	else:

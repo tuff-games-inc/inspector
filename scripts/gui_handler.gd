@@ -7,7 +7,7 @@ extends Control
 @onready var npc_handler = $"../../NPC"
 # Called when the node enters the scene tree for the first time.
 signal show_notice_board()
-signal accept_pressed()
+signal reply_pressed(outcome: bool)
 signal next_pressed()
 func _ready() -> void:
 	day_counter.text = "Day 0"
@@ -51,9 +51,13 @@ func _on_button_pressed() -> void:
 
 
 func _on_accept_pressed() -> void:
-	accept_pressed.emit()
+	reply_pressed.emit(true) # true for accept
 	
 
 
 func _on_next_pressed() -> void:
 	next_pressed.emit()
+
+
+func _on_deny_pressed() -> void:
+	reply_pressed.emit(false) # false for deny
