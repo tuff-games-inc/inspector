@@ -34,7 +34,7 @@ func entity01_spawn() -> void:
 	isMoving = false
 #
 func _replyHandler(outcome: bool) -> void:
-	if !isMoving:
+	if !isMoving && isSpawned:
 		var isAllowedIn = npc.IsAllowedIn
 		if isAllowedIn && outcome:
 			print("succesfully let in")
