@@ -43,25 +43,28 @@ func _replyHandler(outcome: bool) -> void:
 		var isAllowedIn = npc.IsAllowedIn
 		if isAllowedIn && outcome:
 			print("succesfully let in")
+			isSpawned = false
 			anim_player.play("npc_move_success")
 			await anim_player.animation_finished
 			change_score.emit(true)
 		elif isAllowedIn && !outcome:
 			print("incorrectly denied")
+			isSpawned = false
 			anim_player.play("npc_deny")
 			await anim_player.animation_finished
 			change_score.emit(false)
 		elif !isAllowedIn && !outcome:
 			print("succesfully denied")
+			isSpawned = false
 			anim_player.play("npc_deny")
 			await anim_player.animation_finished
 			change_score.emit(true)
 		elif !isAllowedIn && outcome:
 			print("incorrectly accepted")
+			isSpawned = false
 			anim_player.play("npc_move_success")
 			await anim_player.animation_finished
 			change_score.emit(false)
 		npc.queue_free()
-		isSpawned = false
 	else:
 		print("npc is still moving")
