@@ -90,6 +90,34 @@ tracks/0/keys = {
 "values": [Vector3(0, 3.1415927, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_5vw27"]
+resource_name = "npc_deny"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NPC:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.04994774, 1.0064503, -3.0259557), Vector3(0.04994774, 1.0064503, -3.0259557), Vector3(-5.053274, 1.0064503, -4.7870483)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NPC:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0), Vector3(0, 2.681496, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_272bh"]
 resource_name = "npc_move_success"
 length = 1.4333333
@@ -151,6 +179,7 @@ _data = {
 &"RESET": SubResource("Animation_1bvp3"),
 &"camera_tilt_to_board": SubResource("Animation_h2yge"),
 &"camera_tilt_to_main": SubResource("Animation_lquwl"),
+&"npc_deny": SubResource("Animation_5vw27"),
 &"npc_move_success": SubResource("Animation_272bh"),
 &"npc_move_to_counter": SubResource("Animation_7mycd")
 }
