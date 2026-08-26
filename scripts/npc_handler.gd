@@ -3,11 +3,12 @@ extends Node3D
 @onready var anim_player = $"../Camera3D/AnimationPlayer"
 @export var entity01:PackedScene  = load("res://entities/entity01.tscn")
 @export var entity02:PackedScene = load("res://entities/entity02.tscn")
+@export var entity03:PackedScene = load("res://entities/entity03.tscn")
 @onready var gui_handler = $"../Camera3D/GUI"
 var isSpawned = false
 var isMoving = false
 var npc: CharacterBody3D = null
-var possible_entities: Array[PackedScene] = [entity01, entity02]
+var possible_entities: Array[PackedScene] = [entity01, entity02, entity03]
 
 
 signal change_score(direction: bool)
@@ -74,3 +75,6 @@ func _replyHandler(outcome: bool) -> void:
 		isSpawned = false
 	else:
 		print("npc is still moving")
+
+func kill_player() -> void:
+	

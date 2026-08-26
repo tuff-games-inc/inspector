@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cujll8rd0q8o0" path="res://assets/notice_board_200.png" id="5_272bh"]
 [ext_resource type="Script" uid="uid://6yu7ntle3u1u" path="res://scripts/npc_handler.gd" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://67vgvc47o3fh" path="res://assets/pencil_holder.png" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://caa8wtt1nfdok" path="res://icon.svg" id="7_5vw27"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -57,6 +58,42 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NPC/killer/MeshInstance3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NPC/killer/MeshInstance3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.79630184, 0.4955809, 0.64442366)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-6.278476e-07, 1.4455512, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_h2yge"]
@@ -117,6 +154,82 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -1.5707964, 0), Vector3(0, 2.681496, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kek77"]
+resource_name = "npc_kills_you"
+length = 2.6333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NPC:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-5.5983496, 1.0064503, 0.059473038), Vector3(-5.5983496, 1.0064503, 0.059473038), Vector3(-1.4727702, 1.0064503, 0.059473038)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NPC:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2.31, 2.58),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0), Vector3(0, 1.5707964, 0), Vector3(0, 1.5707964, 0), Vector3(1.3056939, 1.5707965, 1.61004e-07)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NPC/killer/MeshInstance3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5, 2, 2.3, 2.59),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.2268928), Vector3(0, 0, -1.3788102), Vector3(0, 0, -1.3788102)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NPC/killer/MeshInstance3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5, 2, 2.3, 2.61),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.79630184, 0.4955809, 0.64442366), Vector3(0.5900538, 0.7785957, 0.64442366), Vector3(0.9924151, 0.7785957, 0.64442366), Vector3(-1.1889076, 0.7785957, 0.64442366)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.31, 2.58),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-6.278476e-07, 1.4455512, 0), Vector3(1.2367151, 0.23107672, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_272bh"]
@@ -181,6 +294,7 @@ _data = {
 &"camera_tilt_to_board": SubResource("Animation_h2yge"),
 &"camera_tilt_to_main": SubResource("Animation_lquwl"),
 &"npc_deny": SubResource("Animation_5vw27"),
+&"npc_kills_you": SubResource("Animation_kek77"),
 &"npc_move_success": SubResource("Animation_272bh"),
 &"npc_move_to_counter": SubResource("Animation_7mycd")
 }
@@ -206,6 +320,15 @@ texture_filter = 0
 transparency = 1
 albedo_texture = ExtResource("5_272bh")
 texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+albedo_color = Color(0.58577716, 0.0013803899, 0.7481989, 1)
+albedo_texture = ExtResource("7_5vw27")
+uv1_scale = Vector3(5.06, 5.06, 5.06)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4c57u"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_chrx7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uulab"]
 
@@ -299,6 +422,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_aj78p")
 [node name="NPC" type="Node3D" parent="." unique_id=2123760075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5983496, 1.0064503, -4.3328714)
 script = ExtResource("5_lquwl")
+
+[node name="killer" type="MeshInstance3D" parent="NPC" unique_id=1698992714]
+material_override = SubResource("StandardMaterial3D_kek77")
+mesh = SubResource("CapsuleMesh_4c57u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NPC/killer" unique_id=1582303745]
+transform = Transform3D(0.2749999, 0, 0, 0, 0.6435289, 0, 0, 0, 0.275, 0.79630184, 0.4955809, 0.64442366)
+mesh = SubResource("CylinderMesh_chrx7")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=916357783]
 transform = Transform3D(0.4745619, -0.24701422, 1.0797335e-08, 0, -2.3385594e-08, -0.535, 0.24701422, 0.4745619, -2.074376e-08, 1.9246223, 0.8800776, -2.20324)
