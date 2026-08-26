@@ -15,6 +15,7 @@ script/source = "extends CharacterBody3D
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62d1j"]
+albedo_color = Color(0, 1, 0, 1)
 albedo_texture = ExtResource("1_mrplf")
 uv1_scale = Vector3(5.06, 5.06, 5.06)
 
