@@ -8,6 +8,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 signal show_notice_board()
 signal accept_pressed()
+signal next_pressed()
 func _ready() -> void:
 	day_counter.text = "Day 0"
 	board.show_normal.connect(show_normal)
@@ -31,6 +32,7 @@ func hide_normal() -> void:
 	$CanvasLayer/Button.visible = false
 	$CanvasLayer/Day.visible = false
 	$CanvasLayer/Deny.visible = false
+	$CanvasLayer/Next.visible = false
 
 func show_normal() -> void:
 	$CanvasLayer.visible = true
@@ -38,6 +40,7 @@ func show_normal() -> void:
 	$CanvasLayer/Button.visible = true
 	$CanvasLayer/Day.visible = true
 	$CanvasLayer/Deny.visible = true
+	$CanvasLayer/Next.visible = true
 
 func _on_button_pressed() -> void:
 	print("go to board")
@@ -50,3 +53,7 @@ func _on_button_pressed() -> void:
 func _on_accept_pressed() -> void:
 	accept_pressed.emit()
 	
+
+
+func _on_next_pressed() -> void:
+	next_pressed.emit()
