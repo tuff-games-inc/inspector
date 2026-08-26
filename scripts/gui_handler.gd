@@ -16,7 +16,8 @@ func _ready() -> void:
 	$CanvasLayer/Points.text = points_string % points
 	board.show_normal.connect(show_normal)
 	npc_handler.change_score.connect(change_score)
-
+	npc_handler.hide_gui.connect(hide_normal)
+	npc_handler.game_over.connect(_game_over)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,6 +39,7 @@ func hide_normal() -> void:
 	$CanvasLayer/Deny.visible = false
 	$CanvasLayer/Next.visible = false
 	$CanvasLayer/Points.visible = false
+	$CanvasLayer/GameOver.visible = false
 
 func show_normal() -> void:
 	$CanvasLayer.visible = true
@@ -78,3 +80,8 @@ func change_score(direction) -> void:
 		points -= 1
 		print(points)
 		$CanvasLayer/Points.text = points_string % points
+
+func _game_over(score) -> void:
+	var gameovertext = "Game Over!\nScore: %s"
+	$CanvasLayer/GameOver.text = gameovertext % score
+	$CanvasLayer/GameOver.visible = true

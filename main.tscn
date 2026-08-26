@@ -355,6 +355,7 @@ offset_top = 71.0
 offset_right = -49.0
 offset_bottom = 71.0
 day = null
+points = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D" unique_id=223126715]
 root_node = NodePath("../..")
@@ -424,6 +425,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5983496, 1.0064503, -4.332
 script = ExtResource("5_lquwl")
 
 [node name="killer" type="MeshInstance3D" parent="NPC" unique_id=1698992714]
+visible = false
 material_override = SubResource("StandardMaterial3D_kek77")
 mesh = SubResource("CapsuleMesh_4c57u")
 

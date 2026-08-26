@@ -26,6 +26,17 @@ text = "Day Y"
 label_settings = SubResource("LabelSettings_chrx7")
 metadata/_edit_use_anchors_ = true
 
+[node name="GameOver" type="Label" parent="CanvasLayer" unique_id=112686544]
+offset_left = 773.0
+offset_top = 425.0
+offset_right = 1001.0
+offset_bottom = 480.0
+scale = Vector2(1.655, 1.655)
+text = "Game Over!
+Score:"
+label_settings = SubResource("LabelSettings_chrx7")
+metadata/_edit_use_anchors_ = true
+
 [node name="Points" type="Label" parent="CanvasLayer" unique_id=1857162427]
 offset_left = 1361.0
 offset_top = 32.0
@@ -74,8 +85,8 @@ scale = Vector2(2.005, 2.005)
 text = "Information"
 
 [connection signal="pressed" from="CanvasLayer/Accept" to="." method="_on_accept_pressed"]
-[connection signal="pressed" from="CanvasLayer/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="CanvasLayer/Next" to="." method="_on_accept_pressed"]
+[connection signal="pressed" from="CanvasLayer/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="CanvasLayer/Deny" to="." method="_on_deny_pressed"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

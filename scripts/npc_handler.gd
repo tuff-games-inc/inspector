@@ -5,16 +5,20 @@ extends Node3D
 @export var entity02:PackedScene = load("res://entities/entity02.tscn")
 @export var entity03:PackedScene = load("res://entities/entity03.tscn")
 @onready var gui_handler = $"../Camera3D/GUI"
+@onready var killer = $killer
+var isKiller = false
 var isSpawned = false
 var isMoving = false
 var npc: CharacterBody3D = null
 var possible_entities: Array[PackedScene] = [entity01, entity02, entity03]
 
-
+signal hide_gui()
 signal change_score(direction: bool)
+signal game_over(score: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	killer.visible = false
 	gui_handler.reply_pressed.connect(_replyHandler)
 	gui_handler.next_pressed.connect(_spawnHandler)
 
@@ -34,7 +38,9 @@ func _spawnHandler() -> void:
 		print("npc already spawned")
 
 func entity_spawn() -> void:
-	var random_entity: PackedScene = possible_entities.pick_random()	
+	var random_entity: PackedScene = possible_entities.pick_random()
+	if random_entity == entity03:
+		isKiller = true
 	npc = random_entity.instantiate() as CharacterBody3D
 	add_child(npc)
 	anim_player.play("npc_move_to_counter")
@@ -67,14 +73,25 @@ func _replyHandler(outcome: bool) -> void:
 		elif !isAllowedIn && outcome:
 			print("incorrectly accepted")
 			isSpawned = false
-			anim_player.play("npc_move_success")
-			await anim_player.animation_finished
-			change_score.emit(false)
+			if isKiller:
+				anim_player.play("npc_move_success")
+				await anim_player.animation_finished
+				npc.visible = false
+				kill_player()
+			else:
+				anim_player.play("npc_move_success")
+				await anim_player.animation_finished
+				change_score.emit(false)
 		npc.queue_free()
 		npc = null
 		isSpawned = false
 	else:
 		print("npc is still moving")
 
-func kill_player() -> void:
-	
+func kill_player(score) -> void:
+	await get_tree().create_timer(3.0).timeout
+	killer.visible = true
+	hide_gui.emit()
+	anim_player.play("npc_kills_you")
+	await anim_player.animation_finished
+	game_over.emit()
