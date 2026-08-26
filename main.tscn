@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bfph75i3skap3" path="res://assets/carept01.png" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://diku0ncs7htyi" path="res://gui_notice_board.tscn" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://busm8lw6i02pm" path="res://assets/plant02.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cujll8rd0q8o0" path="res://assets/notice_board_200.png" id="5_272bh"]
 [ext_resource type="Script" uid="uid://6yu7ntle3u1u" path="res://scripts/npc_handler.gd" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://67vgvc47o3fh" path="res://assets/pencil_holder.png" id="6_7mycd"]
 
@@ -201,6 +202,11 @@ transparency = 1
 albedo_texture = ExtResource("3_h2yge")
 texture_filter = 0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aj78p"]
+transparency = 1
+albedo_texture = ExtResource("5_272bh")
+texture_filter = 0
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_uulab"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3it0"]
@@ -218,15 +224,13 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1588991838]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4455512, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.278476e-07, 1.4455512, 0)
 
 [node name="GUI" parent="Camera3D" unique_id=63124761 instance=ExtResource("1_0xm2m")]
 offset_left = -49.0
 offset_top = 71.0
 offset_right = -49.0
 offset_bottom = 71.0
-day = null
-score = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D" unique_id=223126715]
 root_node = NodePath("../..")
@@ -285,6 +289,11 @@ transform = Transform3D(1, 0, 0, 0, 0.0003915588, 0.99999994, 0, -0.99999994, 0.
 transform = Transform3D(1.265, 0, 0, 0, -5.5294905e-08, -1.265, 0, 1.265, -5.5294905e-08, 1.741933, 1.0292926, -6.345457)
 mesh = SubResource("PlaneMesh_62d1j")
 surface_material_override/0 = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="." unique_id=4144541]
+transform = Transform3D(-1.265, -1.1058981e-07, 4.834034e-15, 0, -5.5294905e-08, -1.265, 1.1058981e-07, -1.265, 5.5294905e-08, 0.11553499, 1.4801941, 3.3839433)
+mesh = SubResource("PlaneMesh_62d1j")
+surface_material_override/0 = SubResource("StandardMaterial3D_aj78p")
 
 [node name="NPC" type="Node3D" parent="." unique_id=2123760075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5983496, 1.0064503, -4.3328714)
