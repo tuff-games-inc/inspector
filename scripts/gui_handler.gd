@@ -1,17 +1,21 @@
 extends Control
 
 @export var day: int = 0
+@export var points: int = 0
 @onready var day_counter = $CanvasLayer/Day
 @onready var anim_player = $"../AnimationPlayer"
 @onready var board = $"../GuiNoticeBoard"
 @onready var npc_handler = $"../../NPC"
+var points_string = "Points: %s"
 # Called when the node enters the scene tree for the first time.
 signal show_notice_board()
 signal reply_pressed(outcome: bool)
 signal next_pressed()
 func _ready() -> void:
 	day_counter.text = "Day 0"
+	$CanvasLayer/Points.text = points_string % points
 	board.show_normal.connect(show_normal)
+	npc_handler.change_score.connect(change_score)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,6 +37,7 @@ func hide_normal() -> void:
 	$CanvasLayer/Day.visible = false
 	$CanvasLayer/Deny.visible = false
 	$CanvasLayer/Next.visible = false
+	$CanvasLayer/Points.visible = false
 
 func show_normal() -> void:
 	$CanvasLayer.visible = true
@@ -41,6 +46,7 @@ func show_normal() -> void:
 	$CanvasLayer/Day.visible = true
 	$CanvasLayer/Deny.visible = true
 	$CanvasLayer/Next.visible = true
+	$CanvasLayer/Points.visible = true
 
 func _on_button_pressed() -> void:
 	print("go to board")
@@ -61,3 +67,14 @@ func _on_next_pressed() -> void:
 
 func _on_deny_pressed() -> void:
 	reply_pressed.emit(false) # false for deny
+
+# true = increment, false = decrement
+func change_score(direction) -> void:
+	if direction:
+		points += 1
+		print(points)
+		$CanvasLayer/Points.text = points_string % points
+	else:
+		points -= 1
+		print(points)
+		$CanvasLayer/Points.text = points_string % points

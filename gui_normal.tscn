@@ -26,6 +26,16 @@ text = "Day Y"
 label_settings = SubResource("LabelSettings_chrx7")
 metadata/_edit_use_anchors_ = true
 
+[node name="Points" type="Label" parent="CanvasLayer" unique_id=1857162427]
+offset_left = 1361.0
+offset_top = 32.0
+offset_right = 1528.0
+offset_bottom = 87.0
+scale = Vector2(1.655, 1.655)
+text = "Points: X"
+label_settings = SubResource("LabelSettings_chrx7")
+metadata/_edit_use_anchors_ = true
+
 [node name="Accept" type="Button" parent="CanvasLayer" unique_id=743478483]
 offset_left = 589.0
 offset_top = 822.0
