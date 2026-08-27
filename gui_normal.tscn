@@ -85,8 +85,8 @@ scale = Vector2(2.005, 2.005)
 text = "Information"
 
 [connection signal="pressed" from="CanvasLayer/Accept" to="." method="_on_accept_pressed"]
-[connection signal="pressed" from="CanvasLayer/Next" to="." method="_on_accept_pressed"]
 [connection signal="pressed" from="CanvasLayer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="CanvasLayer/Next" to="." method="_on_accept_pressed"]
 [connection signal="pressed" from="CanvasLayer/Deny" to="." method="_on_deny_pressed"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

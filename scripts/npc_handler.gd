@@ -14,7 +14,7 @@ var possible_entities: Array[PackedScene] = [entity01, entity02, entity03]
 
 signal hide_gui()
 signal change_score(direction: bool)
-signal game_over(score: int)
+signal game_over()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -88,7 +88,7 @@ func _replyHandler(outcome: bool) -> void:
 	else:
 		print("npc is still moving")
 
-func kill_player(score) -> void:
+func kill_player() -> void:
 	await get_tree().create_timer(3.0).timeout
 	killer.visible = true
 	hide_gui.emit()

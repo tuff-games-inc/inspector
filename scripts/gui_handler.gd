@@ -14,6 +14,7 @@ signal next_pressed()
 func _ready() -> void:
 	day_counter.text = "Day 0"
 	$CanvasLayer/Points.text = points_string % points
+	$CanvasLayer/GameOver.visible = false
 	board.show_normal.connect(show_normal)
 	npc_handler.change_score.connect(change_score)
 	npc_handler.hide_gui.connect(hide_normal)
@@ -81,7 +82,9 @@ func change_score(direction) -> void:
 		print(points)
 		$CanvasLayer/Points.text = points_string % points
 
-func _game_over(score) -> void:
+func _game_over() -> void:
+	print("game over")
 	var gameovertext = "Game Over!\nScore: %s"
-	$CanvasLayer/GameOver.text = gameovertext % score
+	$CanvasLayer/GameOver.text = gameovertext % points
+	$CanvasLayer.visible = true
 	$CanvasLayer/GameOver.visible = true
