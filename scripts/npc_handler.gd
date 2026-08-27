@@ -78,6 +78,7 @@ func _replyHandler(outcome: bool) -> void:
 				await anim_player.animation_finished
 				npc.visible = false
 				kill_player()
+				isKiller = false
 			else:
 				anim_player.play("npc_move_success")
 				await anim_player.animation_finished
