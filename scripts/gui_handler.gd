@@ -78,9 +78,10 @@ func change_score(direction) -> void:
 		print(points)
 		$CanvasLayer/Points.text = points_string % points
 	else:
-		points -= 1
-		print(points)
-		$CanvasLayer/Points.text = points_string % points
+		if !(points == 0):
+			points -= 1
+			print(points)
+			$CanvasLayer/Points.text = points_string % points
 
 func _game_over() -> void:
 	print("game over")

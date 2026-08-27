@@ -354,8 +354,6 @@ offset_left = -49.0
 offset_top = 71.0
 offset_right = -49.0
 offset_bottom = 71.0
-day = null
-points = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D" unique_id=223126715]
 root_node = NodePath("../..")
@@ -377,7 +375,7 @@ transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 8.29049, -9.9680
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=9968653]
-transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 0.38906533, 0, 0.3966664, 0, -3.5092674e-07, 0.097753525, -0.596019, -2.110262)
+transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 0.38906533, 0, 0.3966664, 0, -3.5092674e-07, 0.097753525, -0.032844126, -2.110262)
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1757455802]
@@ -434,6 +432,6 @@ transform = Transform3D(0.2749999, 0, 0, 0, 0.6435289, 0, 0, 0, 0.275, 0.7963018
 mesh = SubResource("CylinderMesh_chrx7")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=916357783]
-transform = Transform3D(0.4745619, -0.24701422, 1.0797335e-08, 0, -2.3385594e-08, -0.535, 0.24701422, 0.4745619, -2.074376e-08, 1.9246223, 0.8800776, -2.20324)
+transform = Transform3D(0.4745619, -0.24701422, 1.0797335e-08, 0, -2.3385594e-08, -0.535, 0.24701422, 0.4745619, -2.074376e-08, 1.9246223, 1.41051, -2.20324)
 mesh = SubResource("PlaneMesh_uulab")
 surface_material_override/0 = SubResource("StandardMaterial3D_y3it0")
