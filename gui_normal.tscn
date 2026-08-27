@@ -1,7 +1,18 @@
 [gd_scene format=3 uid="uid://8n5vt78ngkas"]
 
 [ext_resource type="Script" uid="uid://u1gxo2h6bxmd" path="res://scripts/gui_handler.gd" id="1_aj78p"]
+[ext_resource type="Texture2D" uid="uid://besijxn36vh0e" path="res://assets/accept_button.png" id="2_7m30q"]
 [ext_resource type="Texture2D" uid="uid://cbugqo3xmg8d5" path="res://assets/next_button.png" id="2_li6nh"]
+[ext_resource type="Texture2D" uid="uid://dhcx8ogoxcf36" path="res://assets/accept_button_pressed.png" id="3_vmoib"]
+[ext_resource type="Texture2D" uid="uid://cfywqo6rtsfut" path="res://assets/accept_button_hover.png" id="4_ktdu2"]
+[ext_resource type="Texture2D" uid="uid://ey70dimqjvgv" path="res://assets/next_button_pressed.png" id="6_aerfy"]
+[ext_resource type="Texture2D" uid="uid://b6cel5ls4fqy0" path="res://assets/next_button_hover.png" id="7_0wxil"]
+[ext_resource type="Texture2D" uid="uid://krxpfgipxwrr" path="res://assets/deny_button.png" id="8_7jtav"]
+[ext_resource type="Texture2D" uid="uid://bfqyetw4avt2o" path="res://assets/deny_button_pressed.png" id="9_j1u7k"]
+[ext_resource type="Texture2D" uid="uid://ojxq5jlbj8mh" path="res://assets/deny_button_hover.png" id="10_360ha"]
+[ext_resource type="Texture2D" uid="uid://dmk8dtid1251h" path="res://assets/information_button.png" id="11_85ks6"]
+[ext_resource type="Texture2D" uid="uid://eh23rbpsd8lg" path="res://assets/information_button_pressed.png" id="12_ffar4"]
+[ext_resource type="Texture2D" uid="uid://c5r4t38lodbgm" path="res://assets/information_button_hover.png" id="13_fjxhm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_chrx7"]
 font_size = 40
@@ -39,55 +50,66 @@ label_settings = SubResource("LabelSettings_chrx7")
 metadata/_edit_use_anchors_ = true
 
 [node name="Points" type="Label" parent="CanvasLayer" unique_id=1857162427]
-offset_left = 1361.0
+offset_left = 1493.0
 offset_top = 32.0
-offset_right = 1528.0
+offset_right = 1660.0
 offset_bottom = 87.0
 scale = Vector2(1.655, 1.655)
 text = "Points: X"
 label_settings = SubResource("LabelSettings_chrx7")
 metadata/_edit_use_anchors_ = true
 
-[node name="Accept" type="Button" parent="CanvasLayer" unique_id=743478483]
-offset_left = 589.0
-offset_top = 822.0
-offset_right = 769.0
-offset_bottom = 924.0
-scale = Vector2(1.6799988, 1.6799988)
-text = "Accept"
-
-[node name="Next" type="TextureButton" parent="CanvasLayer" unique_id=1033030011]
-offset_left = 91.00009
-offset_top = 427.00003
-offset_right = 271.0001
-offset_bottom = 529.0
-scale = Vector2(1.2913184, 2.0913184)
-texture_normal = ExtResource("2_li6nh")
+[node name="Accept" type="TextureButton" parent="CanvasLayer" unique_id=2054281146]
+offset_left = 400.0
+offset_top = 665.0
+offset_right = 900.0
+offset_bottom = 1165.0
+texture_normal = ExtResource("2_7m30q")
+texture_pressed = ExtResource("3_vmoib")
+texture_hover = ExtResource("4_ktdu2")
+ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Deny" type="Button" parent="CanvasLayer" unique_id=1361840441]
-offset_left = 983.0
-offset_top = 823.0
-offset_right = 1163.0
-offset_bottom = 925.0
-scale = Vector2(1.6799988, 1.6799988)
-text = "Deny
-"
+[node name="Next" type="TextureButton" parent="CanvasLayer" unique_id=1033030011]
+offset_left = 0.99999964
+offset_top = 365.0
+offset_right = 251.0
+offset_bottom = 515.0
+scale = Vector2(1.2913184, 2.0913184)
+texture_normal = ExtResource("2_li6nh")
+texture_pressed = ExtResource("6_aerfy")
+texture_hover = ExtResource("7_0wxil")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Timer" type="Timer" parent="CanvasLayer" unique_id=1301567505]
 wait_time = 300.0
 autostart = true
 
-[node name="Button" type="Button" parent="CanvasLayer" unique_id=2042692372]
-offset_left = 1660.0001
-offset_top = 43.0
-offset_right = 1761.0001
-offset_bottom = 74.0
-scale = Vector2(2.005, 2.005)
-text = "Information"
+[node name="Deny" type="TextureButton" parent="CanvasLayer" unique_id=1314985834]
+offset_left = 1000.0
+offset_top = 665.0
+offset_right = 1500.0
+offset_bottom = 1165.0
+texture_normal = ExtResource("8_7jtav")
+texture_pressed = ExtResource("9_j1u7k")
+texture_hover = ExtResource("10_360ha")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Information" type="TextureButton" parent="CanvasLayer" unique_id=177163018]
+offset_left = 1781.0
+offset_top = 13.0
+offset_right = 1906.0
+offset_bottom = 138.0
+texture_normal = ExtResource("11_85ks6")
+texture_pressed = ExtResource("12_ffar4")
+texture_hover = ExtResource("13_fjxhm")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="pressed" from="CanvasLayer/Accept" to="." method="_on_accept_pressed"]
 [connection signal="pressed" from="CanvasLayer/Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="CanvasLayer/Deny" to="." method="_on_deny_pressed"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Deny" to="." method="_on_deny_pressed"]
+[connection signal="pressed" from="CanvasLayer/Information" to="." method="_on_information_pressed"]

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bfph75i3skap3" path="res://assets/carept01.png" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://diku0ncs7htyi" path="res://gui_notice_board.tscn" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://busm8lw6i02pm" path="res://assets/plant02.png" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bxkvp80qa1t0" path="res://start_screen.tscn" id="3_kek77"]
 [ext_resource type="Texture2D" uid="uid://cujll8rd0q8o0" path="res://assets/notice_board_200.png" id="5_272bh"]
 [ext_resource type="Script" uid="uid://6yu7ntle3u1u" path="res://scripts/npc_handler.gd" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://67vgvc47o3fh" path="res://assets/pencil_holder.png" id="6_7mycd"]
@@ -382,6 +383,9 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_1bvp3")
 
 [node name="GuiNoticeBoard" parent="Camera3D" unique_id=888936362 instance=ExtResource("2_1bvp3")]
+
+[node name="(dont unhide) start screen gui" parent="Camera3D" unique_id=1534631240 instance=ExtResource("3_kek77")]
+visible = false
 
 [node name="Building" type="Node" parent="." unique_id=897291685]
 

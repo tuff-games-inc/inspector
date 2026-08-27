@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cujll8rd0q8o0" path="res://assets/notice_board_200.png" id="1_brani"]
 [ext_resource type="Script" uid="uid://y8ii6eg7xjbv" path="res://scripts/gui_notice_board.gd" id="1_qefa7"]
 [ext_resource type="Texture2D" uid="uid://caa8wtt1nfdok" path="res://icon.svg" id="3_yfdcs"]
+[ext_resource type="Texture2D" uid="uid://bk0kfb325ke6b" path="res://assets/back_button.png" id="4_2b6c5"]
+[ext_resource type="Texture2D" uid="uid://c7i1fr700eyf" path="res://assets/back_button_pressed.png" id="5_bv06r"]
+[ext_resource type="Texture2D" uid="uid://dur8u0p0ds3l8" path="res://assets/back_button_hover.png" id="6_2b6c5"]
 
 [node name="GuiNoticeBoard" type="Control" unique_id=888936362]
 layout_mode = 3
@@ -23,19 +26,22 @@ offset_right = 1609.0
 offset_bottom = 1104.0
 texture = ExtResource("1_brani")
 
-[node name="Back" type="Button" parent="CanvasLayer" unique_id=762727035]
-offset_left = 25.0
-offset_top = 23.0
-offset_right = 70.0
-offset_bottom = 54.0
-scale = Vector2(3.505, 3.505)
-text = "Back"
-
 [node name="Mugshot" type="TextureRect" parent="CanvasLayer" unique_id=1173340348]
 offset_left = 530.0
 offset_top = 280.0
 offset_right = 658.0
 offset_bottom = 408.0
 texture = ExtResource("3_yfdcs")
+
+[node name="Back" type="TextureButton" parent="CanvasLayer" unique_id=1027339710]
+offset_left = -21.0
+offset_top = -77.0
+offset_right = 279.0
+offset_bottom = 223.0
+texture_normal = ExtResource("4_2b6c5")
+texture_pressed = ExtResource("5_bv06r")
+texture_hover = ExtResource("6_2b6c5")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]

@@ -34,7 +34,7 @@ func _on_timer_timeout() -> void:
 func hide_normal() -> void:
 	$CanvasLayer.visible = false
 	$CanvasLayer/Accept.visible = false
-	$CanvasLayer/Button.visible = false
+	$CanvasLayer/Information.visible = false
 	$CanvasLayer/Day.visible = false
 	$CanvasLayer/Deny.visible = false
 	$CanvasLayer/Next.visible = false
@@ -44,13 +44,13 @@ func hide_normal() -> void:
 func show_normal() -> void:
 	$CanvasLayer.visible = true
 	$CanvasLayer/Accept.visible = true
-	$CanvasLayer/Button.visible = true
+	$CanvasLayer/Information.visible = true
 	$CanvasLayer/Day.visible = true
 	$CanvasLayer/Deny.visible = true
 	$CanvasLayer/Next.visible = true
 	$CanvasLayer/Points.visible = true
 
-func _on_button_pressed() -> void:
+func _on_information_pressed() -> void:
 	print("go to board")
 	hide_normal()
 	anim_player.play("camera_tilt_to_board")
