@@ -19,7 +19,6 @@ func _ready() -> void:
 	npc_handler.change_score.connect(change_score)
 	npc_handler.hide_gui.connect(hide_normal)
 	npc_handler.game_over.connect(_game_over)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

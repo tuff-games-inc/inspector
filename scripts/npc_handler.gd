@@ -21,7 +21,6 @@ func _ready() -> void:
 	killer.visible = false
 	gui_handler.reply_pressed.connect(_replyHandler)
 	gui_handler.next_pressed.connect(_spawnHandler)
-
 #
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
