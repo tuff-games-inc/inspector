@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bxkvp80qa1t0"]
 
+[ext_resource type="Script" uid="uid://dboh0ego371cf" path="res://start_screen.gd" id="1_ncxyx"]
+
 [node name="Control" type="Control" unique_id=1534631240]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ncxyx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1244976561]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=345187634]
 layout_mode = 0
@@ -18,7 +27,7 @@ text = "insert game name here"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=1678918568]
+[node name="Play" type="Button" parent="." unique_id=1678918568]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,3 +43,5 @@ grow_vertical = 2
 pivot_offset = Vector2(200, 75)
 theme_override_font_sizes/font_size = 81
 text = "play"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
