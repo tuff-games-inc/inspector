@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://8n5vt78ngkas"]
 
 [ext_resource type="Script" uid="uid://u1gxo2h6bxmd" path="res://scripts/gui_handler.gd" id="1_aj78p"]
+[ext_resource type="Texture2D" uid="uid://cbugqo3xmg8d5" path="res://assets/next_button.png" id="2_li6nh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_chrx7"]
 font_size = 40
@@ -55,13 +56,14 @@ offset_bottom = 924.0
 scale = Vector2(1.6799988, 1.6799988)
 text = "Accept"
 
-[node name="Next" type="Button" parent="CanvasLayer" unique_id=2111025019]
+[node name="Next" type="TextureButton" parent="CanvasLayer" unique_id=1033030011]
 offset_left = 91.00009
 offset_top = 427.00003
 offset_right = 271.0001
 offset_bottom = 529.0
-scale = Vector2(1.2913184, 1.2913184)
-text = "Next"
+scale = Vector2(1.2913184, 2.0913184)
+texture_normal = ExtResource("2_li6nh")
+stretch_mode = 0
 
 [node name="Deny" type="Button" parent="CanvasLayer" unique_id=1361840441]
 offset_left = 983.0
