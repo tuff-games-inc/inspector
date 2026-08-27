@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://67vgvc47o3fh" path="res://assets/pencil_holder.png" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://cwt2yv7st3r2q" path="res://assets/door_normal.png" id="7_4c57u"]
 [ext_resource type="Texture2D" uid="uid://caa8wtt1nfdok" path="res://icon.svg" id="7_5vw27"]
+[ext_resource type="Texture2D" uid="uid://dbm2e8wyqxg4v" path="res://assets/door_wrong_way.png" id="9_dg77c"]
+[ext_resource type="Texture2D" uid="uid://bf8axk8422bvy" path="res://assets/door_warning.png" id="10_ycdy4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -427,14 +429,24 @@ mesh = SubResource("PlaneMesh_chrx7")
 surface_material_override/0 = SubResource("StandardMaterial3D_ijsla")
 
 [node name="RightWall" type="MeshInstance3D" parent="Building" unique_id=447618794]
-transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 7.969, 3.782, -5.388)
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 3.3615193, 3.782, -5.388)
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="LeftWall" type="MeshInstance3D" parent="Building" unique_id=1865373019]
-transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.0915995, -8, 3.782, -5.14)
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.0915995, -3.4078345, 3.782, -5.14)
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="Label3D" type="Label3D" parent="Building/LeftWall" unique_id=1998073843]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.8555136, -1.2683693, 0.34183073)
+pixel_size = 0.003
+text = "how are you here?"
+font = SubResource("SystemFont_ln1c7")
+
+[node name="LeftWall2" type="MeshInstance3D" parent="Building" unique_id=317944132]
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.0915995, -6.5597253, 3.782, 1.266552)
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="Label3D" type="Label3D" parent="Building/LeftWall2" unique_id=537531543]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.8555136, -1.2683693, 0.34183073)
 pixel_size = 0.003
 text = "how are you here?"
@@ -448,10 +460,6 @@ mesh = SubResource("BoxMesh_g4v7s")
 transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 1.8243713, 0, 0.3966664, 0, -3.5092674e-07, 0.097753525, 3.3947132, -6.959781)
 mesh = SubResource("BoxMesh_g4v7s")
 
-[node name="Sprite3D" type="Sprite3D" parent="Building/FrontWall" unique_id=15092979]
-transform = Transform3D(-2.0150964e-08, 0, 0.342, 0, 2.1999993, 0, -0.461, 0, -1.4949295e-08, 1.0989742, -1.1415875, 0.68834543)
-texture = ExtResource("7_4c57u")
-
 [node name="BackWall" type="MeshInstance3D" parent="Building" unique_id=96797374]
 transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 1.8243713, 0, 0.3966664, 0, -3.5092674e-07, 0.097753525, 3.3947132, 3.739005)
 mesh = SubResource("BoxMesh_g4v7s")
@@ -459,6 +467,21 @@ mesh = SubResource("BoxMesh_g4v7s")
 [node name="WallFillerPiece1" type="MeshInstance3D" parent="Building" unique_id=98839450]
 transform = Transform3D(3.3542325, 0, 0, 0, 2.1012118, 0, 0, 0, 0.94010377, -5.847562, 1.3948452, -2.113747)
 mesh = SubResource("BoxMesh_ln1c7")
+
+[node name="DoorAccept" type="Sprite3D" parent="Building" unique_id=1415160912]
+transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 2.3873527, 1.4394406, -4.329781)
+texture_filter = 0
+texture = ExtResource("7_4c57u")
+
+[node name="DoorDeny" type="Sprite3D" parent="Building" unique_id=7281984]
+transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, -2.429724, 1.4394406, -4.329781)
+texture_filter = 0
+texture = ExtResource("9_dg77c")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Building" unique_id=1076785253]
+transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, -5.547293, 1.4394406, 0.91255903)
+texture_filter = 0
+texture = ExtResource("10_ycdy4")
 
 [node name="Counter" type="Node" parent="." unique_id=216640273]
 

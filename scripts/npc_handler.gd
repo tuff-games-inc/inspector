@@ -4,7 +4,12 @@ extends Node3D
 @export var entity01:PackedScene  = load("res://entities/entity01.tscn")
 @export var entity02:PackedScene = load("res://entities/entity02.tscn")
 @export var entity03:PackedScene = load("res://entities/entity03.tscn")
+@export var open_door_texture = load("res://assets/door_open.png")
+@export var normal_door_texture = load("res://assets/door_normal.png")
+@export var deny_door_texture = load("res://assets/door_wrong_way.png")
 @onready var gui_handler = $"../Camera3D/GUI"
+@onready var door_deny = $"../Building/DoorDeny"
+@onready var door_accept = $"../Building/DoorAccept"
 @onready var killer = $killer
 var isKiller = false
 var isSpawned = false
@@ -42,8 +47,10 @@ func entity_spawn() -> void:
 		isKiller = true
 	npc = random_entity.instantiate() as CharacterBody3D
 	add_child(npc)
+	door_deny.texture = open_door_texture
 	anim_player.play("npc_move_to_counter")
 	await anim_player.animation_finished
+	door_deny.texture = deny_door_texture
 	isMoving = false
 
 func _replyHandler(outcome: bool) -> void:
@@ -54,33 +61,43 @@ func _replyHandler(outcome: bool) -> void:
 		if isAllowedIn && outcome:
 			print("succesfully let in")
 			isSpawned = false
+			door_accept.texture = open_door_texture
 			anim_player.play("npc_move_success")
 			await anim_player.animation_finished
+			door_accept.texture = normal_door_texture
 			change_score.emit(true)
 		elif isAllowedIn && !outcome:
 			print("incorrectly denied")
 			isSpawned = false
+			door_deny.texture = open_door_texture
 			anim_player.play("npc_deny")
 			await anim_player.animation_finished
+			door_deny.texture = deny_door_texture
 			change_score.emit(false)
 		elif !isAllowedIn && !outcome:
 			print("succesfully denied")
 			isSpawned = false
+			door_deny.texture = open_door_texture
 			anim_player.play("npc_deny")
 			await anim_player.animation_finished
+			door_deny.texture = deny_door_texture
 			change_score.emit(true)
 		elif !isAllowedIn && outcome:
 			print("incorrectly accepted")
 			isSpawned = false
 			if isKiller:
 				anim_player.play("npc_move_success")
+				door_accept.texture = open_door_texture
 				await anim_player.animation_finished
+				door_accept.texture = normal_door_texture
 				npc.visible = false
 				kill_player()
 				isKiller = false
 			else:
 				anim_player.play("npc_move_success")
+				door_accept.texture = open_door_texture
 				await anim_player.animation_finished
+				door_accept.texture = normal_door_texture
 				change_score.emit(false)
 		npc.queue_free()
 		npc = null

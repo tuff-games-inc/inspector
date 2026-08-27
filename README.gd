@@ -1,3 +1,4 @@
+extends Node
 # Note for this commit
 
 # i changed the animation and added an exit door, if you don't like the something about the door or the animation feel free to change it or revert it
