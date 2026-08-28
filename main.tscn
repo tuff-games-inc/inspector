@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://caa8wtt1nfdok" path="res://icon.svg" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://dbm2e8wyqxg4v" path="res://assets/door_wrong_way.png" id="9_dg77c"]
 [ext_resource type="Texture2D" uid="uid://bf8axk8422bvy" path="res://assets/door_warning.png" id="10_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://crw0bddwmwf0y" path="res://assets/weapons_rack.png" id="11_vivmo"]
 [ext_resource type="Texture2D" uid="uid://dfkveiful50j5" path="res://assets/next-text.png" id="14_w48qg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
@@ -473,7 +474,7 @@ text = "how are you here?"
 font = SubResource("SystemFont_ln1c7")
 
 [node name="LeftWall2" type="MeshInstance3D" parent="Building" unique_id=317944132]
-transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.0915995, -6.5597253, 3.782, 1.266552)
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.0915995, -3.7355375, 3.782, 1.266552)
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="Roof" type="MeshInstance3D" parent="Building" unique_id=1672804218]
@@ -503,16 +504,17 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("9_dg77c")
 
-[node name="LeftBoothDoor" type="Sprite3D" parent="Building" unique_id=1076785253]
-transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, -5.547293, 1.4394406, 0.91255903)
-texture_filter = 0
-texture = ExtResource("10_ycdy4")
-
 [node name="RightBoothDoor" type="Sprite3D" parent="Building" unique_id=396308431]
 transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 5.2472944, 1.4394406, 0.91255903)
 flip_h = true
 texture_filter = 0
 texture = ExtResource("10_ycdy4")
+
+[node name="Sprite3D" type="Sprite3D" parent="Building" unique_id=833262379]
+transform = Transform3D(-1.385651e-07, 0, 3.17, 0, 3.17, 0, -3.17, 0, -1.385651e-07, -2.7639718, 1.9639465, 0.74117064)
+double_sided = false
+texture_filter = 0
+texture = ExtResource("11_vivmo")
 
 [node name="Counter" type="Node" parent="." unique_id=216640273]
 
