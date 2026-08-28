@@ -16,5 +16,5 @@ func _process(_delta: float) -> void:
 
 func _on_play_pressed() -> void:
 	visible = false
-	main_gui.show_normal()
 	play_pressed.emit()
+	main_gui.show_normal()
