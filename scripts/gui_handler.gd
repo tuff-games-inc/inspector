@@ -87,6 +87,7 @@ func change_score(direction) -> void:
 func _game_over() -> void:
 	print("game over")
 	var gameovertext = "Game Over!\nScore: %s"
+	hide_normal()
 	$CanvasLayer/GameOver.text = gameovertext % points
 	$CanvasLayer.visible = true
 	$CanvasLayer/GameOver.visible = true

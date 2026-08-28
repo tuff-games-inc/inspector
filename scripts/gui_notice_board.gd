@@ -2,6 +2,7 @@ extends Control
 
 @onready var main_gui = $"../GUI"
 @onready var anim_player = $"../AnimationPlayer"
+@onready var npc_handler = $"../../NPC"
 
 signal show_normal()
 
@@ -9,7 +10,7 @@ signal show_normal()
 func _ready() -> void:
 	_hide_board()
 	main_gui.show_notice_board.connect(_show_board)
-
+	npc_handler.update_board.connect(_update_board)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
@@ -18,11 +19,19 @@ func _show_board() -> void:
 	$CanvasLayer/Back.visible = true
 	$CanvasLayer/TextureRect.visible = true
 	$CanvasLayer.visible = true
+	$CanvasLayer/Name.visible = true
+	$CanvasLayer/DOB.visible = true
+	$"CanvasLayer/Entry permit".visible = true
+	$CanvasLayer/Occupation.visible = true
 
 func _hide_board() -> void:
 	$CanvasLayer/Back.visible = false
 	$CanvasLayer/TextureRect.visible = false
 	$CanvasLayer.visible = false
+	$CanvasLayer/Name.visible = false
+	$CanvasLayer/DOB.visible = false
+	$"CanvasLayer/Entry permit".visible = false
+	$CanvasLayer/Occupation.visible = false
 
 func _on_back_pressed() -> void:
 	print("go to normal pos")
@@ -31,3 +40,13 @@ func _on_back_pressed() -> void:
 	await anim_player.animation_finished
 	print("animation finished")
 	show_normal.emit()
+	
+func _update_board(name, dob, permit, occupation) -> void:
+	$CanvasLayer/Name.text = name
+	$CanvasLayer/DOB.text = dob
+	if permit:
+		$"CanvasLayer/Entry permit".text = "Entry Permit: VALID"
+	else:
+		$"CanvasLayer/Entry permit".text = "Entry Permit: INVALID"
+	$CanvasLayer/Occupation.text = occupation
+	print("updated notice board") 

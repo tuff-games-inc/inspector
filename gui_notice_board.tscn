@@ -60,12 +60,20 @@ offset_bottom = 362.0
 scale = Vector2(2.57, 2.57)
 text = "6/7/00"
 
-[node name="DOB2" type="Label" parent="CanvasLayer" unique_id=1420715034]
+[node name="Entry permit" type="Label" parent="CanvasLayer" unique_id=1420715034]
 offset_left = 956.0
 offset_top = 280.0
 offset_right = 1026.0
 offset_bottom = 303.0
 scale = Vector2(2.57, 2.57)
 text = "Entry permit: VALID"
+
+[node name="Occupation" type="Label" parent="CanvasLayer" unique_id=1128247286]
+offset_left = 956.00006
+offset_top = 339.0
+offset_right = 1108.0
+offset_bottom = 362.0
+scale = Vector2(2.57, 2.57)
+text = "Occupation: "
 
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
