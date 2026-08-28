@@ -18,6 +18,7 @@ var isKiller = false
 var isSpawned = false
 var isMoving = false
 var npc: CharacterBody3D = null
+var npc_spawned = false
 var possible_entities: Array[PackedScene] = [entity01, entity02, entity03]
 
 signal hide_gui()
@@ -37,8 +38,9 @@ func _ready() -> void:
 #
 
 func _spawnHandler() -> void:
-	if !npc:
+	if !npc_spawned:
 		isSpawned = true
+		npc_spawned = true
 		isMoving = true
 		next_light.emission_enabled = false
 		entity_spawn()
@@ -109,7 +111,7 @@ func _replyHandler(outcome: bool) -> void:
 				next_light.emission_enabled = true
 				change_score.emit(false)
 		npc.queue_free()
-		npc = null
+		npc_spawned = false
 		isSpawned = false
 	else:
 		print("npc is still moving")

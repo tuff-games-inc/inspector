@@ -44,4 +44,28 @@ texture_hover = ExtResource("6_2b6c5")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="Name" type="Label" parent="CanvasLayer" unique_id=273733775]
+offset_left = 723.00006
+offset_top = 280.0
+offset_right = 793.00006
+offset_bottom = 303.0
+scale = Vector2(2.57, 2.57)
+text = "John Doe"
+
+[node name="DOB" type="Label" parent="CanvasLayer" unique_id=69516457]
+offset_left = 723.0
+offset_top = 339.0
+offset_right = 793.0
+offset_bottom = 362.0
+scale = Vector2(2.57, 2.57)
+text = "6/7/00"
+
+[node name="DOB2" type="Label" parent="CanvasLayer" unique_id=1420715034]
+offset_left = 956.0
+offset_top = 280.0
+offset_right = 1026.0
+offset_bottom = 303.0
+scale = Vector2(2.57, 2.57)
+text = "Entry permit: VALID"
+
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
