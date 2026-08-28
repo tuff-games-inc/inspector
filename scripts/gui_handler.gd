@@ -83,14 +83,23 @@ func change_score(direction) -> void:
 			points -= 1
 			print(points)
 			$CanvasLayer/Points.text = points_string % points
+		else:
+			points -= 1
+			_game_over()
 
 func _game_over() -> void:
 	print("game over")
 	var gameovertext = "Game Over!\nScore: %s"
+	var gamelost = "Your score \ndropped below 0!"
 	hide_normal()
-	$CanvasLayer/GameOver.text = gameovertext % points
-	$CanvasLayer.visible = true
-	$CanvasLayer/GameOver.visible = true
+	if points <= 0:
+		$CanvasLayer/GameOver.text = gamelost
+		$CanvasLayer.visible = true
+		$CanvasLayer/GameOver.visible = true
+	else:
+		$CanvasLayer/GameOver.text = gameovertext % points
+		$CanvasLayer.visible = true
+		$CanvasLayer/GameOver.visible = true
 
 func start() -> void:
 	$CanvasLayer/Timer.start()

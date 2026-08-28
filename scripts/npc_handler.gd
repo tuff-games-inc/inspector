@@ -115,6 +115,7 @@ func _replyHandler(outcome: bool) -> void:
 		npc.queue_free()
 		npc_spawned = false
 		isSpawned = false
+		isKiller = false
 	else:
 		print("npc is still moving")
 
