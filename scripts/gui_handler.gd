@@ -6,6 +6,7 @@ extends Control
 @onready var anim_player = $"../AnimationPlayer"
 @onready var board = $"../GuiNoticeBoard"
 @onready var npc_handler = $"../../NPC"
+@onready var start_screen = $"../StartScreen"
 var points_string = "Points: %s"
 # Called when the node enters the scene tree for the first time.
 signal show_notice_board()
@@ -19,6 +20,7 @@ func _ready() -> void:
 	npc_handler.change_score.connect(change_score)
 	npc_handler.hide_gui.connect(hide_normal)
 	npc_handler.game_over.connect(_game_over)
+	start_screen.play_pressed.connect(start)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
@@ -88,3 +90,6 @@ func _game_over() -> void:
 	$CanvasLayer/GameOver.text = gameovertext % points
 	$CanvasLayer.visible = true
 	$CanvasLayer/GameOver.visible = true
+
+func start() -> void:
+	$CanvasLayer/Timer.start()

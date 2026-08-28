@@ -10,6 +10,9 @@ extends Node3D
 @onready var gui_handler = $"../Camera3D/GUI"
 @onready var door_deny = $"../Building/DoorDeny"
 @onready var door_accept = $"../Building/DoorAccept"
+@onready var next_light_mesh: MeshInstance3D = $"../Counter/NextLight/MeshInstance3D/MeshInstance3D"
+@onready var next_light: StandardMaterial3D = next_light_mesh.get_active_material(0)
+@onready var right_booth_door = $"../Building/RightBoothDoor"
 @onready var killer = $killer
 var isKiller = false
 var isSpawned = false
@@ -37,6 +40,7 @@ func _spawnHandler() -> void:
 	if !npc:
 		isSpawned = true
 		isMoving = true
+		next_light.emission_enabled = false
 		entity_spawn()
 	else:
 		print("npc already spawned")
@@ -65,6 +69,7 @@ func _replyHandler(outcome: bool) -> void:
 			anim_player.play("npc_move_success")
 			await anim_player.animation_finished
 			door_accept.texture = normal_door_texture
+			next_light.emission_enabled = true
 			change_score.emit(true)
 		elif isAllowedIn && !outcome:
 			print("incorrectly denied")
@@ -73,6 +78,7 @@ func _replyHandler(outcome: bool) -> void:
 			anim_player.play("npc_deny")
 			await anim_player.animation_finished
 			door_deny.texture = deny_door_texture
+			next_light.emission_enabled = true
 			change_score.emit(false)
 		elif !isAllowedIn && !outcome:
 			print("succesfully denied")
@@ -81,6 +87,7 @@ func _replyHandler(outcome: bool) -> void:
 			anim_player.play("npc_deny")
 			await anim_player.animation_finished
 			door_deny.texture = deny_door_texture
+			next_light.emission_enabled = true
 			change_score.emit(true)
 		elif !isAllowedIn && outcome:
 			print("incorrectly accepted")
@@ -90,6 +97,7 @@ func _replyHandler(outcome: bool) -> void:
 				door_accept.texture = open_door_texture
 				await anim_player.animation_finished
 				door_accept.texture = normal_door_texture
+				next_light.emission_enabled = true
 				npc.visible = false
 				kill_player()
 				isKiller = false
@@ -98,6 +106,7 @@ func _replyHandler(outcome: bool) -> void:
 				door_accept.texture = open_door_texture
 				await anim_player.animation_finished
 				door_accept.texture = normal_door_texture
+				next_light.emission_enabled = true
 				change_score.emit(false)
 		npc.queue_free()
 		npc = null
@@ -107,6 +116,7 @@ func _replyHandler(outcome: bool) -> void:
 
 func kill_player() -> void:
 	await get_tree().create_timer(3.0).timeout
+	right_booth_door.texture = open_door_texture
 	killer.visible = true
 	hide_gui.emit()
 	anim_player.play("npc_kills_you")

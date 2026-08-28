@@ -11,7 +11,7 @@ func _ready() -> void:
 	main_gui.show_notice_board.connect(_show_board)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _show_board() -> void:

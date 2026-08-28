@@ -175,7 +175,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-5.5983496, 1.0064503, 0.059473038), Vector3(-5.5983496, 1.0064503, 0.059473038), Vector3(-1.4727702, 1.0064503, 0.059473038)]
+"values": [Vector3(5.598, 1.006, 1.034), Vector3(5.598, 1.006, 1.034), Vector3(1.473, 1.006, 0.059)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -187,7 +187,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 3.1415927, 0), Vector3(0, 3.1415927, 0), Vector3(0, 3.1415927, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -199,7 +199,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5, 1.5, 2.31, 2.58),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0), Vector3(0, 1.5707964, 0), Vector3(0, 1.5707964, 0), Vector3(1.3056939, 1.5707965, 1.61004e-07)]
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5707964, 0), Vector3(0, -1.5707964, 0), Vector3(0, -1.5707964, 0), Vector3(1.3055062, -1.5707964, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -235,7 +235,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(2.31, 2.58),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-6.278476e-07, 1.4455512, 0), Vector3(1.2367151, 0.23107672, 0)]
+"values": [Vector3(-6.278476e-07, 1.4455512, 0), Vector3(-1.237, 0.231, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_272bh"]
@@ -329,6 +329,16 @@ size = Vector3(1.6899414, 5.0573425, 3.220768)
 
 [sub_resource type="SystemFont" id="SystemFont_ln1c7"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_ie502"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fvhwl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_euuy2"]
+albedo_color = Color(5.7275593e-06, 0.6153194, 7.70092e-07, 1)
+emission_enabled = true
+emission = Color(0.0742504, 0.35269704, 0.08206302, 1)
+emission_energy_multiplier = 3.46
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rb6tl"]
 render_priority = -1
 transparency = 1
@@ -381,15 +391,6 @@ texture_filter = 0
 transparency = 1
 albedo_texture = ExtResource("3_h2yge")
 texture_filter = 0
-
-[sub_resource type="BoxMesh" id="BoxMesh_ie502"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_fvhwl"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_euuy2"]
-albedo_color = Color(5.7275593e-06, 0.6153194, 7.70092e-07, 1)
-emission = Color(0.0742504, 0.35269704, 0.08206302, 1)
-emission_energy_multiplier = 3.46
 
 [node name="Node3D" type="Node3D" unique_id=586525987]
 
@@ -454,7 +455,7 @@ mesh = SubResource("PlaneMesh_chrx7")
 surface_material_override/0 = SubResource("StandardMaterial3D_ijsla")
 
 [node name="RightWall" type="MeshInstance3D" parent="Building" unique_id=447618794]
-transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 3.3615193, 3.782, -5.388)
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 3.4402826, 3.782, -5.388)
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="RightWall2" type="MeshInstance3D" parent="Building" unique_id=2089339762]
@@ -492,49 +493,57 @@ transform = Transform3D(3.3542325, 0, 0, 0, 2.1012118, 0, 0, 0, 0.94010377, -5.8
 mesh = SubResource("BoxMesh_ln1c7")
 
 [node name="DoorAccept" type="Sprite3D" parent="Building" unique_id=1415160912]
-transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 2.3873527, 1.4394406, -4.329781)
+transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 2.4674323, 1.4394406, -4.329781)
 texture_filter = 0
-render_priority = 1
 texture = ExtResource("7_4c57u")
 
 [node name="DoorDeny" type="Sprite3D" parent="Building" unique_id=7281984]
-transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, -2.429724, 1.4394406, -4.329781)
+transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, -2.4329166, 1.4394406, -4.329781)
 double_sided = false
 texture_filter = 0
-render_priority = 1
 texture = ExtResource("9_dg77c")
 
-[node name="Sprite3D3" type="Sprite3D" parent="Building" unique_id=1076785253]
+[node name="LeftBoothDoor" type="Sprite3D" parent="Building" unique_id=1076785253]
 transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, -5.547293, 1.4394406, 0.91255903)
 texture_filter = 0
 texture = ExtResource("10_ycdy4")
 
-[node name="Sprite3D4" type="Sprite3D" parent="Building" unique_id=396308431]
+[node name="RightBoothDoor" type="Sprite3D" parent="Building" unique_id=396308431]
 transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 5.2472944, 1.4394406, 0.91255903)
 flip_h = true
 texture_filter = 0
 texture = ExtResource("10_ycdy4")
 
-[node name="Sprite3D5" type="Sprite3D" parent="Building" unique_id=615099660]
-transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 5.2472944, 1.4394406, 0.91255903)
-flip_h = true
-texture_filter = 0
-
 [node name="Counter" type="Node" parent="." unique_id=216640273]
 
-[node name="Node" type="Node" parent="Counter" unique_id=607850579]
+[node name="NextLight" type="Node" parent="Counter" unique_id=1567905337]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Counter/Node" unique_id=1718852451]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Counter/NextLight" unique_id=678337311]
+transform = Transform3D(0.8949539, 0, 0, 0, 0.34883773, 0, 0, 0, 0.12205297, 0, 2.6377501, -1.7200383)
+mesh = SubResource("BoxMesh_ie502")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Counter/NextLight/MeshInstance3D" unique_id=930118935]
+transform = Transform3D(0.7844473, 0, 0, 0, 0.78901, 0, 0, 0, 0.9999999, 0, 0, 1.000001)
+mesh = SubResource("BoxMesh_fvhwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_euuy2")
+
+[node name="Sprite3D" type="Sprite3D" parent="Counter/NextLight/MeshInstance3D/MeshInstance3D" unique_id=1201888180]
+transform = Transform3D(1.1537868, 0, 0, 0, 3.0804193, 0, 0, 0, 8.193165, 0, 0.029299736, 0.54046917)
+texture = ExtResource("14_w48qg")
+
+[node name="Glass (disable in testing)" type="Node" parent="Counter" unique_id=607850579]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Counter/Glass (disable in testing)" unique_id=1718852451]
 transform = Transform3D(-0.97524077, -1.4347116e-08, 7.226809e-15, 0, 8.04841e-09, 1.5608135, 5.8128887e-08, -0.18412618, 6.822534e-08, -1.4380264, 1.6963007, -2.1184573)
 material_override = SubResource("StandardMaterial3D_rb6tl")
 mesh = SubResource("BoxMesh_ycdy4")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Counter/Node" unique_id=1971085941]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Counter/Glass (disable in testing)" unique_id=1971085941]
 transform = Transform3D(-1.1655153, -1.4347116e-08, 7.226809e-15, 0, 8.04841e-09, 1.5608135, 6.947013e-08, -0.18412618, 6.822534e-08, 1.5358092, 1.6963007, -2.1184573)
 material_override = SubResource("StandardMaterial3D_rb6tl")
 mesh = SubResource("BoxMesh_ycdy4")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Counter/Node" unique_id=1181756408]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Counter/Glass (disable in testing)" unique_id=1181756408]
 transform = Transform3D(-0.6066756, -1.0907651e-08, 3.2849763e-15, 0, 7.999184e-09, 1.2608328, 3.616069e-08, -0.183, 5.511275e-08, -0.048165917, 1.8471711, -2.118)
 material_override = SubResource("StandardMaterial3D_rb6tl")
 mesh = SubResource("BoxMesh_ycdy4")
@@ -633,19 +642,6 @@ mesh = SubResource("PlaneMesh_62d1j")
 surface_material_override/0 = SubResource("StandardMaterial3D_0xm2m")
 
 [node name="Plant2" type="MeshInstance3D" parent="Decoration" unique_id=2143086168]
-transform = Transform3D(1.265, 0, 0, 0, -5.5294905e-08, -1.265, 0, 1.265, -5.5294905e-08, -1.8773612, 1.0292926, -6.345457)
+transform = Transform3D(1.265, 0, 0, 0, -5.5294905e-08, -1.265, 0, 1.265, -5.5294905e-08, -1.8778743, 1.0292926, -6.345439)
 mesh = SubResource("PlaneMesh_62d1j")
 surface_material_override/0 = SubResource("StandardMaterial3D_0xm2m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=678337311]
-transform = Transform3D(0.8949539, 0, 0, 0, 0.34883773, 0, 0, 0, 0.12205297, 0, 2.6377501, -1.7200383)
-mesh = SubResource("BoxMesh_ie502")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=930118935]
-transform = Transform3D(0.7844473, 0, 0, 0, 0.78901, 0, 0, 0, 0.9999999, 0, 0, 1.000001)
-mesh = SubResource("BoxMesh_fvhwl")
-surface_material_override/0 = SubResource("StandardMaterial3D_euuy2")
-
-[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D/MeshInstance3D" unique_id=1201888180]
-transform = Transform3D(1.1537868, 0, 0, 0, 3.0804193, 0, 0, 0, 8.193165, 0, 0.029299736, 0.54046917)
-texture = ExtResource("14_w48qg")

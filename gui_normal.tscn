@@ -84,7 +84,7 @@ stretch_mode = 0
 
 [node name="Timer" type="Timer" parent="CanvasLayer" unique_id=1301567505]
 wait_time = 300.0
-autostart = true
+one_shot = true
 
 [node name="Deny" type="TextureButton" parent="CanvasLayer" unique_id=1314985834]
 offset_left = 1000.0
