@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://caa8wtt1nfdok" path="res://icon.svg" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://dbm2e8wyqxg4v" path="res://assets/door_wrong_way.png" id="9_dg77c"]
 [ext_resource type="Texture2D" uid="uid://bf8axk8422bvy" path="res://assets/door_warning.png" id="10_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://crw0bddwmwf0y" path="res://assets/weapons_rack.png" id="11_vivmo"]
+[ext_resource type="Texture2D" uid="uid://cxes4g28p6obf" path="res://assets/weapons_rack.png" id="11_vivmo"]
 [ext_resource type="Texture2D" uid="uid://dfkveiful50j5" path="res://assets/next-text.png" id="14_w48qg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
@@ -329,6 +329,7 @@ uv2_scale = Vector3(1.08, 1.08, 1.08)
 size = Vector3(1.6899414, 5.0573425, 3.220768)
 
 [sub_resource type="SystemFont" id="SystemFont_ln1c7"]
+subpixel_positioning = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_ie502"]
 
