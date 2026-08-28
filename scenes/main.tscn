@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://brgtvgcgu52xb"]
 
 [ext_resource type="PackedScene" uid="uid://8n5vt78ngkas" path="res://scenes/gui_normal.tscn" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://cvtw7viop81ly" path="res://README.gd" id="1_efxa6"]
 [ext_resource type="Texture2D" uid="uid://bfph75i3skap3" path="res://assets/carept01.png" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://diku0ncs7htyi" path="res://scenes/gui_notice_board.tscn" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://busm8lw6i02pm" path="res://assets/plant02.png" id="3_h2yge"]
@@ -11,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://67vgvc47o3fh" path="res://assets/pencil_holder.png" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://cwt2yv7st3r2q" path="res://assets/door_normal.png" id="7_4c57u"]
 [ext_resource type="Texture2D" uid="uid://caa8wtt1nfdok" path="res://icon.svg" id="7_5vw27"]
+[ext_resource type="AudioStream" uid="uid://ccxflm48cruap" path="res://assets/doormove2.wav" id="8_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://dbm2e8wyqxg4v" path="res://assets/door_wrong_way.png" id="9_dg77c"]
+[ext_resource type="AudioStream" uid="uid://bq1kqnumutx61" path="res://assets/doorstop5.wav" id="9_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://bf8axk8422bvy" path="res://assets/door_warning.png" id="10_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://cxes4g28p6obf" path="res://assets/weapons_rack.png" id="11_vivmo"]
 [ext_resource type="Texture2D" uid="uid://dfkveiful50j5" path="res://assets/next-text.png" id="14_w48qg"]
@@ -426,7 +427,6 @@ texture_filter = 0
 [node name="Node3D" type="Node3D" unique_id=586525987]
 
 [node name="README" type="Node" parent="." unique_id=533800257]
-script = ExtResource("1_efxa6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=517493607]
 environment = SubResource("Environment_h2yge")
@@ -535,6 +535,12 @@ mesh = SubResource("BoxMesh_ln1c7")
 transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 2.4674323, 1.4394406, -4.329781)
 texture_filter = 0
 texture = ExtResource("7_4c57u")
+
+[node name="AcceptDoorAudioNode1" type="AudioStreamPlayer3D" parent="Building/DoorAccept" unique_id=1738684821]
+stream = ExtResource("8_jkv2x")
+
+[node name="AcceptDoorAudioNode2" type="AudioStreamPlayer3D" parent="Building/DoorAccept" unique_id=866203003]
+stream = ExtResource("9_jbj1t")
 
 [node name="DoorDeny" type="Sprite3D" parent="Building" unique_id=7281984]
 transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, -2.4329166, 1.4394406, -4.329781)
