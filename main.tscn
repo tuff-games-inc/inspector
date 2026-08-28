@@ -135,6 +135,34 @@ tracks/0/keys = {
 "values": [Vector3(0, 3.1415927, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_vivmo"]
+resource_name = "cutscene"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(9.865642, 1.4455512, 1.0114523), Vector3(0, 1.446, 1.011), Vector3(0, 1.446, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_5vw27"]
 resource_name = "npc_deny"
 length = 1.6
@@ -300,6 +328,7 @@ _data = {
 &"RESET": SubResource("Animation_1bvp3"),
 &"camera_tilt_to_board": SubResource("Animation_h2yge"),
 &"camera_tilt_to_main": SubResource("Animation_lquwl"),
+&"cutscene": SubResource("Animation_vivmo"),
 &"npc_deny": SubResource("Animation_5vw27"),
 &"npc_kills_you": SubResource("Animation_kek77"),
 &"npc_move_success": SubResource("Animation_272bh"),
@@ -326,7 +355,7 @@ uv1_scale = Vector3(45.835, 45.835, 45.835)
 uv2_scale = Vector3(1.08, 1.08, 1.08)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
-size = Vector3(1.6899414, 5.0573425, 3.220768)
+size = Vector3(1.69, 5, 3.221)
 
 [sub_resource type="SystemFont" id="SystemFont_ln1c7"]
 subpixel_positioning = 0
@@ -461,7 +490,15 @@ transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 3.440
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="RightWall2" type="MeshInstance3D" parent="Building" unique_id=2089339762]
-transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 6.2409387, 3.782, 1.7085104)
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 6.242382, 6.5180216, 1.7078142)
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="RightWall3" type="MeshInstance3D" parent="Building" unique_id=1713041639]
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 6.242382, 3.7814703, -3.8511045)
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="RightWall4" type="MeshInstance3D" parent="Building" unique_id=909253652]
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 6.242382, 3.7814703, 5.5690384)
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="LeftWall" type="MeshInstance3D" parent="Building" unique_id=1865373019]
@@ -507,6 +544,12 @@ texture = ExtResource("9_dg77c")
 
 [node name="RightBoothDoor" type="Sprite3D" parent="Building" unique_id=396308431]
 transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 5.2472944, 1.4394406, 0.91255903)
+flip_h = true
+texture_filter = 0
+texture = ExtResource("10_ycdy4")
+
+[node name="RightBoothDoor2" type="Sprite3D" parent="Building" unique_id=1295884159]
+transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 7.273379, 1.4394406, 0.91255903)
 flip_h = true
 texture_filter = 0
 texture = ExtResource("10_ycdy4")
