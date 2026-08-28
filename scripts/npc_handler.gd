@@ -14,6 +14,8 @@ extends Node3D
 @onready var next_light: StandardMaterial3D = next_light_mesh.get_active_material(0)
 @onready var accept_audio_node1 = $"../Building/DoorAccept/AcceptDoorAudioNode1"
 @onready var accept_audio_node2 = $"../Building/DoorAccept/AcceptDoorAudioNode2"
+@onready var deny_audio_node1 = $"../Building/DoorDeny/DenyDoorAudioNode1"
+@onready var deny_audio_node2 = $"../Building/DoorDeny/DenyDoorAudioNode2"
 @onready var right_booth_door = $"../Building/RightBoothDoor"
 @onready var killer = $killer
 var isKiller = false
@@ -56,16 +58,16 @@ func entity_spawn() -> void:
 		isKiller = true
 	npc = random_entity.instantiate() as CharacterBody3D
 	add_child(npc)
-	accept_audio_node1.play()
-	await accept_audio_node1.finished
-	accept_audio_node2.play()
+	deny_audio_node1.play()
+	await deny_audio_node1.finished
+	deny_audio_node2.play()
 	door_deny.texture = open_door_texture
 	anim_player.play("npc_move_to_counter")
 	await anim_player.animation_finished
 	update_board.emit(npc.Name, npc.DateOfBirth, npc.HasPermit, npc.Occupation)
-	accept_audio_node1.play()
-	await accept_audio_node1.finished
-	accept_audio_node2.play()
+	deny_audio_node1.play()
+	await deny_audio_node1.finished
+	deny_audio_node2.play()
 	door_deny.texture = deny_door_texture
 	isMoving = false
 
@@ -92,30 +94,30 @@ func _replyHandler(outcome: bool) -> void:
 		elif isAllowedIn && !outcome:
 			print("incorrectly denied")
 			isSpawned = false
-			accept_audio_node1.play()
-			await accept_audio_node1.finished
-			accept_audio_node2.play()
+			deny_audio_node1.play()
+			await deny_audio_node1.finished
+			deny_audio_node2.play()
 			door_deny.texture = open_door_texture
 			anim_player.play("npc_deny")
 			await anim_player.animation_finished
-			accept_audio_node1.play()
-			await accept_audio_node1.finished
-			accept_audio_node2.play()
+			deny_audio_node1.play()
+			await deny_audio_node1.finished
+			deny_audio_node2.play()
 			door_deny.texture = deny_door_texture
 			next_light.emission_enabled = true
 			change_score.emit(false)
 		elif !isAllowedIn && !outcome:
 			print("succesfully denied")
 			isSpawned = false
-			accept_audio_node1.play()
-			await accept_audio_node1.finished
-			accept_audio_node2.play()
+			deny_audio_node1.play()
+			await deny_audio_node1.finished
+			deny_audio_node2.play()
 			door_deny.texture = open_door_texture
 			anim_player.play("npc_deny")
 			await anim_player.animation_finished
-			accept_audio_node1.play()
-			await accept_audio_node1.finished
-			accept_audio_node2.play()
+			deny_audio_node1.play()
+			await deny_audio_node1.finished
+			deny_audio_node2.play()
 			door_deny.texture = deny_door_texture
 			next_light.emission_enabled = true
 			change_score.emit(true)

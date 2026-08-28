@@ -372,17 +372,38 @@ emission = Color(0.0742504, 0.35269704, 0.08206302, 1)
 emission_energy_multiplier = 3.46
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rb6tl"]
-render_priority = -1
 transparency = 1
-no_depth_test = true
-depth_test = 1
+cull_mode = 2
+depth_draw_mode = 2
 albedo_color = Color(1, 1, 1, 0.003921569)
+metallic_specular = 0.63
 roughness = 0.15
-emission_enabled = true
-refraction_enabled = true
+rim_enabled = true
+rim = 0.9
 
 [sub_resource type="BoxMesh" id="BoxMesh_ycdy4"]
-size = Vector3(1.8226929, 1, 1)
+size = Vector3(2.4034271, 1, 1.7799683)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jbj1t"]
+size = Vector3(0.22207522, 5, 1.9408603)
+
+[sub_resource type="BoxMesh" id="BoxMesh_muem4"]
+size = Vector3(1.4792017, 5, 0.48165533)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dp3eg"]
+size = Vector3(1.4792017, 4.6853333, 0.13460878)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0ld40"]
+size = Vector3(0.44419068, 0.2941742, 0.13383271)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gqmmt"]
+size = Vector3(0.44419068, 0.2941742, 0.13383271)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yc10j"]
+size = Vector3(1.4792017, 5, 0.48165533)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jscy8"]
+size = Vector3(0.30201662, 5, 3.221)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c57u"]
 albedo_color = Color(0.4627451, 0.23921569, 0.05882353, 1)
@@ -490,15 +511,15 @@ transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 3.440
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="RightWall2" type="MeshInstance3D" parent="Building" unique_id=2089339762]
-transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 6.242382, 6.5180216, 1.7078142)
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 6.242382, 6.491337, 1.7078142)
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="RightWall3" type="MeshInstance3D" parent="Building" unique_id=1713041639]
-transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 6.242382, 3.7814703, -3.8511045)
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 6.242382, 3.7814703, -3.891807)
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="RightWall4" type="MeshInstance3D" parent="Building" unique_id=909253652]
-transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2475917, 6.242382, 3.7814703, 5.5690384)
+transform = Transform3D(1.1493076, 0, 0, 0, 1.5612031, 0, 0, 0, 2.2395089, 6.242382, 3.7814703, 5.6738386)
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="LeftWall" type="MeshInstance3D" parent="Building" unique_id=1865373019]
@@ -548,14 +569,22 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("9_dg77c")
 
+[node name="DenyDoorAudioNode1" type="AudioStreamPlayer3D" parent="Building/DoorDeny" unique_id=462198500]
+transform = Transform3D(0.22197556, 0, 1.7763568e-15, 0, 0.22197556, 0, -1.7763568e-15, 0, 0.22197556, 0, 0, 0.0032550097)
+stream = ExtResource("8_jkv2x")
+
+[node name="DenyDoorAudioNode2" type="AudioStreamPlayer3D" parent="Building/DoorDeny" unique_id=463012980]
+transform = Transform3D(0.22197556, 0, 1.7763568e-15, 0, 0.22197556, 0, -1.7763568e-15, 0, 0.22197556, 0, 0, 0.0036696792)
+stream = ExtResource("9_jbj1t")
+
 [node name="RightBoothDoor" type="Sprite3D" parent="Building" unique_id=396308431]
-transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 5.2472944, 1.4394406, 0.91255903)
+transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 5.2770557, 1.439, 0.897)
 flip_h = true
 texture_filter = 0
 texture = ExtResource("10_ycdy4")
 
 [node name="RightBoothDoor2" type="Sprite3D" parent="Building" unique_id=1295884159]
-transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 7.273379, 1.4394406, 0.91255903)
+transform = Transform3D(-1.9691981e-07, 0, 4.505, 0, 4.505, 0, -4.505, 0, -1.9691981e-07, 7.2078485, 1.4488424, 0.89674485)
 flip_h = true
 texture_filter = 0
 texture = ExtResource("10_ycdy4")
@@ -583,26 +612,40 @@ surface_material_override/0 = SubResource("StandardMaterial3D_euuy2")
 transform = Transform3D(1.1537868, 0, 0, 0, 3.0804193, 0, 0, 0, 8.193165, 0, 0.029299736, 0.54046917)
 texture = ExtResource("14_w48qg")
 
-[node name="Glass (disable in testing)" type="Node" parent="Counter" unique_id=607850579]
+[node name="Glass" type="Node" parent="Counter" unique_id=607850579]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Counter/Glass (disable in testing)" unique_id=1718852451]
-transform = Transform3D(-0.97524077, -1.4347116e-08, 7.226809e-15, 0, 8.04841e-09, 1.5608135, 5.8128887e-08, -0.18412618, 6.822534e-08, -1.4380264, 1.6963007, -2.1184573)
-material_override = SubResource("StandardMaterial3D_rb6tl")
-mesh = SubResource("BoxMesh_ycdy4")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Counter/Glass (disable in testing)" unique_id=1971085941]
-transform = Transform3D(-1.1655153, -1.4347116e-08, 7.226809e-15, 0, 8.04841e-09, 1.5608135, 6.947013e-08, -0.18412618, 6.822534e-08, 1.5358092, 1.6963007, -2.1184573)
-material_override = SubResource("StandardMaterial3D_rb6tl")
-mesh = SubResource("BoxMesh_ycdy4")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Counter/Glass (disable in testing)" unique_id=1181756408]
-transform = Transform3D(-0.6066756, -1.0907651e-08, 3.2849763e-15, 0, 7.999184e-09, 1.2608328, 3.616069e-08, -0.183, 5.511275e-08, -0.048165917, 1.8471711, -2.118)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Counter/Glass" unique_id=1181756408]
+transform = Transform3D(-2.8759542, -1.09076534e-08, 3.2849763e-15, 0, 7.999186e-09, 1.2608328, 1.7142024e-07, -0.18300004, 5.511275e-08, -0.048997164, 2.067264, -2.116428)
 material_override = SubResource("StandardMaterial3D_rb6tl")
 mesh = SubResource("BoxMesh_ycdy4")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Counter" unique_id=9968653]
-transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 0.38906533, 0, 0.3966664, 0, -3.5092674e-07, 0.097753525, -0.032844126, -2.110262)
-mesh = SubResource("BoxMesh_g4v7s")
+transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 0.38906533, 0, 0.3966664, 0, -3.5092674e-07, 3.3874269, -0.032844126, -1.8191235)
+mesh = SubResource("BoxMesh_jbj1t")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Counter" unique_id=1954251133]
+transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 0.38906533, 0, 0.3966664, 0, -3.5092674e-07, -2.4700172, -0.032844126, -2.0684536)
+mesh = SubResource("BoxMesh_muem4")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Counter" unique_id=1039916834]
+transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 0.38906533, 0, 0.3966664, 0, -3.5092674e-07, -0.0027773902, -0.09405708, -2.0684536)
+mesh = SubResource("BoxMesh_dp3eg")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Counter" unique_id=1380480507]
+transform = Transform3D(-1.733884e-08, 0, -8.028267, -0.28048548, 0.2751107, 2.4814267e-07, 0.28048548, 0.2751107, -2.4814267e-07, 0.00033783866, 0.83873326, -2.3037105)
+mesh = SubResource("BoxMesh_0ld40")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Counter" unique_id=2056200467]
+transform = Transform3D(-1.7338838e-08, 0, -8.028266, 0.28048545, 0.27511066, -2.4814264e-07, 0.28048545, -0.27511066, -2.4814264e-07, 0.00033783866, 0.83873326, -1.886778)
+mesh = SubResource("BoxMesh_gqmmt")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Counter" unique_id=1139592421]
+transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 0.38906533, 0, 0.3966664, 0, -3.5092674e-07, 2.4680696, -0.032844126, -2.0684536)
+mesh = SubResource("BoxMesh_yc10j")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Counter" unique_id=807967599]
+transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 0.38906533, 0, 0.3966664, 0, -3.5092674e-07, 0.09775353, -0.032844126, -2.3855453)
+mesh = SubResource("BoxMesh_jscy8")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Counter" unique_id=1757455802]
 transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 0.38906533, 0, 0.3966664, 0, -3.5092674e-07, 0.097753525, 3.3947132, -2.110262)
