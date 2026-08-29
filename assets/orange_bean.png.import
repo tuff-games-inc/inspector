@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dph50alhxl3hf"
-path.s3tc="res://.godot/imported/orange_bean.png-5f04564ed0464b53de66d21348905bf9.s3tc.ctex"
+path="res://.godot/imported/orange_bean.png-5f04564ed0464b53de66d21348905bf9.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/orange_bean.png"
-dest_files=["res://.godot/imported/orange_bean.png-5f04564ed0464b53de66d21348905bf9.s3tc.ctex"]
+dest_files=["res://.godot/imported/orange_bean.png-5f04564ed0464b53de66d21348905bf9.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

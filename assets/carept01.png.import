@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfph75i3skap3"
-path.s3tc="res://.godot/imported/carept01.png-3e08cc0a521983801635e7cde66b84cb.s3tc.ctex"
+path="res://.godot/imported/carept01.png-3e08cc0a521983801635e7cde66b84cb.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/carept01.png"
-dest_files=["res://.godot/imported/carept01.png-3e08cc0a521983801635e7cde66b84cb.s3tc.ctex"]
+dest_files=["res://.godot/imported/carept01.png-3e08cc0a521983801635e7cde66b84cb.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
