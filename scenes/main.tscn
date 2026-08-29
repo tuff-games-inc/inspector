@@ -1089,7 +1089,7 @@ transform = Transform3D(1, 0, 0, 0, 0.0003915588, 0.99999994, 0, -0.99999994, 0.
 [node name="Decoration" type="Node" parent="." unique_id=6656387]
 
 [node name="PenHolder" type="MeshInstance3D" parent="Decoration" unique_id=916357783]
-transform = Transform3D(0.4745619, -0.24701422, 1.0797335e-08, 0, -2.3385594e-08, -0.535, 0.24701422, 0.4745619, -2.074376e-08, 2.050702, 1.41051, -2.20324)
+transform = Transform3D(0.4745619, -0.24701422, 1.0797335e-08, 0, -2.3385594e-08, -0.535, 0.24701422, 0.4745619, -2.074376e-08, 1.4555525, 1.3726393, -1.5904274)
 mesh = SubResource("PlaneMesh_uulab")
 surface_material_override/0 = SubResource("StandardMaterial3D_y3it0")
 

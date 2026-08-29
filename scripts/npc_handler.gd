@@ -4,9 +4,12 @@ extends Node3D
 @onready var anim_npc_move_success = $"../Camera3D/AnimNPCMoveSuccess"
 @onready var anim_npc_move_to_counter = $"../Camera3D/AnimNPCMoveToCounter"
 @onready var anim_npc_kill = $"../Camera3D/AnimNPCKillsYou"
-@export var entity01:PackedScene  = load("res://entities/entity01.tscn")
+@export var entity01:PackedScene = load("res://entities/entity01.tscn")
 @export var entity02:PackedScene = load("res://entities/entity02.tscn")
 @export var entity03:PackedScene = load("res://entities/entity03.tscn")
+@export var entity04:PackedScene = load("res://entities/entity04.tscn")
+@export var entity05:PackedScene = load("res://entities/entity05.tscn")
+@export var entity06:PackedScene = load("res://entities/entity06.tscn")
 @export var open_door_texture = load("res://assets/door_open.png")
 @export var normal_door_texture = load("res://assets/door_normal.png")
 @export var deny_door_texture = load("res://assets/door_wrong_way.png")
@@ -26,7 +29,7 @@ var isSpawned = false
 var isMoving = false
 var npc: CharacterBody3D = null
 var npc_spawned = false
-var possible_entities: Array[PackedScene] = [entity01, entity02, entity03]
+var possible_entities: Array[PackedScene] = [entity01, entity02, entity03, entity04, entity05, entity06]
 
 signal hide_gui()
 signal change_score(direction: bool)
