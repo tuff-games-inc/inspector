@@ -38,6 +38,19 @@ text = "Day Y"
 label_settings = SubResource("LabelSettings_chrx7")
 metadata/_edit_use_anchors_ = true
 
+[node name="highscore" type="Label" parent="CanvasLayer" unique_id=73395328]
+anchors_preset = -1
+anchor_left = 0.123958334
+anchor_right = 0.43559605
+offset_left = 319.0
+offset_top = 733.0
+offset_right = 427.00006
+offset_bottom = 788.0
+scale = Vector2(1.655, 1.655)
+text = "something"
+label_settings = SubResource("LabelSettings_chrx7")
+metadata/_edit_use_anchors_ = true
+
 [node name="GameOver" type="Label" parent="CanvasLayer" unique_id=112686544]
 offset_left = 773.0
 offset_top = 425.0
@@ -50,9 +63,9 @@ label_settings = SubResource("LabelSettings_chrx7")
 metadata/_edit_use_anchors_ = true
 
 [node name="Points" type="Label" parent="CanvasLayer" unique_id=1857162427]
-offset_left = 1493.0
+offset_left = 1414.0
 offset_top = 32.0
-offset_right = 1660.0
+offset_right = 1581.0
 offset_bottom = 87.0
 scale = Vector2(1.655, 1.655)
 text = "Points: X"

@@ -3,11 +3,14 @@ extends Control
 @export var day: int = 0
 @export var points: int = 0
 @onready var day_counter = $CanvasLayer/Day
+@onready var highscore = $CanvasLayer/highscore
 @onready var anim_tilt_to_board = $"../AnimTiltToBoard"
 @onready var board = $"../GuiNoticeBoard"
 @onready var npc_handler = $"../../NPC"
 @onready var start_screen = $"../StartScreen"
 var points_string = "Points: %s"
+var highpoints: Array = ["Looks like you're doing well, eh", "Your climbing high", "How long have you been at it now", "Aren't you good at this"]
+var pointcount = 0
 # Called when the node enters the scene tree for the first time.
 signal show_notice_board()
 signal reply_pressed(outcome: bool)
@@ -42,6 +45,7 @@ func hide_normal() -> void:
 	$CanvasLayer/Next.visible = false
 	$CanvasLayer/Points.visible = false
 	$CanvasLayer/GameOver.visible = false
+	$CanvasLayer/highscore.visible = false
 	$CanvasLayer/RestartButton.visible = false
 	$CanvasLayer/RestartButton.disabled = true
 
@@ -61,15 +65,11 @@ func _on_information_pressed() -> void:
 	await anim_tilt_to_board.animation_finished
 	show_notice_board.emit()
 
-
 func _on_accept_pressed() -> void:
 	reply_pressed.emit(true) # true for accept
 	
-
-
 func _on_next_pressed() -> void:
 	next_pressed.emit()
-
 
 func _on_deny_pressed() -> void:
 	reply_pressed.emit(false) # false for deny
@@ -78,8 +78,17 @@ func _on_deny_pressed() -> void:
 func change_score(direction) -> void:
 	if direction:
 		points += 1
+		pointcount += 1
 		print(points)
 		$CanvasLayer/Points.text = points_string % points
+		if pointcount == 10:
+			var highscore = highpoints.pick_random()
+			$CanvasLayer/highscore.text = highscore
+			$CanvasLayer.visible = true
+			$CanvasLayer/highscore.visible = true
+			await get_tree().create_timer(3.0).timeout
+			$CanvasLayer/highscore.visible = false
+			pointcount = 0
 	else:
 		if !(points == 0):
 			points -= 1
