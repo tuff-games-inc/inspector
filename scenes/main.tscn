@@ -849,6 +849,12 @@ mesh = SubResource("BoxMesh_g4v7s")
 transform = Transform3D(-1.733884e-08, 0, -8.028268, 0, 1.8243713, 0, 0.3966664, 0, -3.5092674e-07, 0.097753525, 3.3947132, 3.739005)
 mesh = SubResource("BoxMesh_g4v7s")
 
+[node name="Label3D" type="Label3D" parent="Building/BackWall" unique_id=2014391271]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999992, 0, 6.661338e-16, 0, 1, 2.8567705, -0.30744255, -0.63980097)
+text = "RIP Dolly Parton"
+font_size = 35
+outline_size = 15
+
 [node name="WallFillerPiece1" type="MeshInstance3D" parent="Building" unique_id=98839450]
 transform = Transform3D(3.3542325, 0, 0, 0, 2.1012118, 0, 0, 0, 0.94010377, -5.847562, 1.3948452, -2.113747)
 mesh = SubResource("BoxMesh_ln1c7")
