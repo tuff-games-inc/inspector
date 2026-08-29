@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbm2e8wyqxg4v"
-path.s3tc="res://.godot/imported/door_wrong_way.png-fa1963685ef5fcffbaab42e601a369b0.s3tc.ctex"
+path="res://.godot/imported/door_wrong_way.png-fa1963685ef5fcffbaab42e601a369b0.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/door_wrong_way.png"
-dest_files=["res://.godot/imported/door_wrong_way.png-fa1963685ef5fcffbaab42e601a369b0.s3tc.ctex"]
+dest_files=["res://.godot/imported/door_wrong_way.png-fa1963685ef5fcffbaab42e601a369b0.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

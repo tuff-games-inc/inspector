@@ -574,6 +574,7 @@ render_priority = 1
 albedo_texture = ExtResource("1_ig7tw")
 uv1_scale = Vector3(45.835, 45.835, 45.835)
 uv2_scale = Vector3(1.08, 1.08, 1.08)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
 size = Vector3(1.69, 5, 3.221)
@@ -931,6 +932,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_euuy2")
 
 [node name="Sprite3D" type="Sprite3D" parent="Counter/NextLight/MeshInstance3D/MeshInstance3D" unique_id=1201888180]
 transform = Transform3D(1.1537868, 0, 0, 0, 3.0804193, 0, 0, 0, 8.193165, 0, 0.029299736, 0.54046917)
+texture_filter = 0
 texture = ExtResource("14_w48qg")
 
 [node name="Glass" type="Node" parent="Counter" unique_id=607850579]
