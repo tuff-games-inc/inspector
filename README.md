@@ -22,7 +22,19 @@ SFX credit:
 
 - [keycard](/assets/keycard.wav), [Pixabay](https://pixabay.com/sound-effects/film-special-effects-keycard-accept-410380/)
 
+Font credits:
+
+- art font is hand drawn
+
+- [HomeVideo-Regular](/assets/HomeVideo-Regular.ttf), [DaFont](https://www.dafont.com/home-video.font)
+
 ## Screenshots
+
+![Notice Board View](https://img.itch.zone/aW1hZ2UvNDk0NTcwNy8yOTYxODA2My5wbmc=/original/eX9Mt3.png)
+
+![Main GUI facing purple NPC](https://img.itch.zone/aW1hZ2UvNDk0NTcwNy8yOTYxODA2NC5wbmc=/original/pAnByo.png)
+
+![Main Game home screen](https://img.itch.zone/aW1nLzI5NjE4MDc3LnBuZw==/original/hIcX9r.png)
 
 ## Who are we?
 
