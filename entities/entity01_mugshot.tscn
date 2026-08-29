@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://c0aglw74y8fvg"]
+
+[ext_resource type="Texture2D" uid="uid://cn4xelbtb3mjm" path="res://assets/red_bean.png" id="1_oow1r"]
+
+[sub_resource type="GDScript" id="GDScript_ufed2"]
+script/source = "extends CharacterBody3D
+
+@export var IsAllowedIn = true
+@export var Name = \"Placeholder\"
+@export var DateOfBirth = \"1/1/70\"
+@export var Occupation = \"Placeholder\"
+@export var PermitValidUntil = \"17/6/1992\"
+@export var WillKillYou = false
+@onready var sub_viewport: SubViewport = $SubViewportContainer/SubViewport
+
+func _ready() -> void:
+	await RenderingServer.frame_post_draw
+	var image: Image = sub_viewport.get_texture().get_image()
+	image.save_png(\"res://assets/red_npc_mugshot.png\")
+"
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sbms0"]
+points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4760704, 0.49888408, 0.16971254, 0.5591441, 0.46417162, 0.23105091, -0.8035912, 0.32045516, 0.40741014, 0.651043, -0.24352328, -0.4827893, 0.59484255, 0.082213186, -0.3628679, -0.68231165, 0.2896967, 0.46904355, -0.65452886, -0.06627126, -0.12744367, 0.8427015, -0.33810276, -0.39343542, -0.6839421, -0.24471663, 0.43825462, 0.62330925, 0.20084947, 0.0841477, 0.977454, 0.11479468, -0.06820232, -0.9764576, -0.12927033, 0.20054972, -0.56312895, -0.4514544, -0.18552664, 0.59545326, -0.4534751, -0.27336287, 0.59226835, 0.40775412, -0.0069364863, -0.47682306, 0.49966025, 0.37582088, -0.5886136, 0.31695515, 0.111579016, 0.5630594, -0.48117727, -0.41725034, 0.5278656, -0.27049688, -0.48454633, -0.59697217, -0.06650971, -0.27974695, 0.90856135, 0.05333608, -0.25019687, -0.8807117, 0.20531891, 0.263647, -0.90277094, -0.1273943, 0.29336792, 0.8715263, -0.15719566, 0.3734115, -0.5263189, -0.32824618, 0.4996626, 0.47664148, -0.0068885577, 0.053105574, 0.8750009, 0.32470253, -0.15454252, -0.5908538, 0.4658794, -0.09727988, -0.7823577, -0.39818847, -0.3876489, -0.49817133, 0.31564978, -0.30067965, -0.58799505, -0.38890144)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cvopo"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=561865313]
+script = SubResource("GDScript_ufed2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=229238714]
+shape = SubResource("ConvexPolygonShape3D_sbms0")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1601283250]
+transform = Transform3D(3.18, 0, 0, 0, 3.18, 0, 0, 0, 3.18, 0, 0, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_oow1r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=770740435]
+transform = Transform3D(10.009505, 0, 0, 0, 8.617899, 0, 0, 0, 0.27700853, 0, 0, -1.2868228)
+mesh = SubResource("BoxMesh_cvopo")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=736684150]
+transform = Transform3D(10.009504, 0, 0, 0, -3.7670029e-07, -0.2770085, 0, 8.617898, -1.2108426e-08, 0, 3.468463, 0.96485114)
+mesh = SubResource("BoxMesh_cvopo")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1634394774]
+transform = Transform3D(10.009504, 0, 0, 0, -3.7670029e-07, -0.2770085, 0, 8.617898, -1.2108426e-08, 0, -1.4987408, 0.96485114)
+mesh = SubResource("BoxMesh_cvopo")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1939905193]
+transform = Transform3D(10.009505, 0, 0, 0, 8.617899, 0, 0, 0, 0.27700853, 0, 0, 3.870778)
+mesh = SubResource("BoxMesh_cvopo")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=957840735]
+transform = Transform3D(-4.3752934e-07, 0, 0.2770085, 0, 8.617898, 0, -10.009504, 0, -1.2108426e-08, -4.6884747, 0, -0.18225098)
+mesh = SubResource("BoxMesh_cvopo")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=551565253]
+transform = Transform3D(-4.3752934e-07, 0, 0.2770085, 0, 8.617898, 0, -10.009504, 0, -1.2108426e-08, 4.596367, 0, -0.18225098)
+mesh = SubResource("BoxMesh_cvopo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=211183219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1558021, 3.086411)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=1902997262]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.748611, 1.8426011)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=214295651]
+offset_left = 460.0
+offset_right = 1540.0
+offset_bottom = 1080.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1748850666]
+handle_input_locally = false
+size = Vector2i(1080, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1262270483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12516081, 4.012475)
+current = true
+fov = 29.078993
