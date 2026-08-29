@@ -92,7 +92,7 @@ func change_score(direction) -> void:
 func _game_over() -> void:
 	print("game over")
 	var gameovertext = "Game Over!\nScore: %s"
-	var gamelost = "Your score \ndropped below 0!"
+	var gamelost = "Your score\ndropped\nbelow 0!"
 	hide_normal()
 	if points <= 0:
 		$CanvasLayer/GameOver.text = gamelost

@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://h5i0x1wdqq1v"]
+
+[ext_resource type="Texture2D" uid="uid://bb6cj23dycdnm" path="res://assets/permit_red_empty.png" id="1_uxli4"]
+[ext_resource type="FontFile" uid="uid://bs6gj38vxc5qh" path="res://fonts/HomeVideo-Regular.ttf" id="2_q7fs6"]
+
+[sub_resource type="GDScript" id="GDScript_uxli4"]
+script/source = "extends Control
+
+var Name
+var DOB
+var PermitValidUntil
+var Occupation
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	print(Occupation)
+"
+
+[sub_resource type="SystemFont" id="SystemFont_muem4"]
+
+[node name="DocumentGUI" type="Control" unique_id=865492041]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_uxli4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1534318192]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=649525148]
+offset_left = 159.99998
+offset_top = -252.0
+offset_right = 223.99998
+offset_bottom = -188.0
+scale = Vector2(25, 25)
+texture = ExtResource("1_uxli4")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1544511727]
+offset_left = 614.0
+offset_top = 196.0
+offset_right = 1305.0
+offset_bottom = 312.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q7fs6")
+theme_override_font_sizes/font_size = 96
+text = "Bean City"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer" unique_id=125099571]
+offset_left = 798.0
+offset_top = 295.0
+offset_right = 1545.0
+offset_bottom = 427.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_muem4")
+theme_override_font_sizes/font_size = 48
+text = "Name: John Doe"
+vertical_alignment = 1
+
+[node name="DOB" type="Label" parent="CanvasLayer" unique_id=524897763]
+offset_left = 800.0
+offset_top = 381.0
+offset_right = 1547.0
+offset_bottom = 513.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_muem4")
+theme_override_font_sizes/font_size = 48
+text = "D.O.B: 6/7/1992"
+vertical_alignment = 1
+
+[node name="Valid Until" type="Label" parent="CanvasLayer" unique_id=342342562]
+offset_left = 800.0
+offset_top = 466.0
+offset_right = 1547.0
+offset_bottom = 598.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_muem4")
+theme_override_font_sizes/font_size = 48
+text = "Permit Valid until: 16/7/1992"
+vertical_alignment = 1
+
+[node name="Occupation" type="Label" parent="CanvasLayer" unique_id=1784571973]
+offset_left = 798.0
+offset_top = 552.0
+offset_right = 1545.0
+offset_bottom = 684.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_muem4")
+theme_override_font_sizes/font_size = 48
+text = "Occupation: Office Worker"
+vertical_alignment = 1
+
+[node name="IssuedBy" type="Label" parent="CanvasLayer" unique_id=1858756776]
+offset_left = 804.0
+offset_top = 660.0
+offset_right = 1551.0
+offset_bottom = 797.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_muem4")
+theme_override_font_sizes/font_size = 48
+text = "Issued by:
+Central Internal Service"
+vertical_alignment = 1
