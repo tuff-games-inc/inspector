@@ -3,7 +3,7 @@ extends Control
 @export var day: int = 0
 @export var points: int = 0
 @onready var day_counter = $CanvasLayer/Day
-@onready var anim_player = $"../AnimationPlayer"
+@onready var anim_tilt_to_board = $"../AnimTiltToBoard"
 @onready var board = $"../GuiNoticeBoard"
 @onready var npc_handler = $"../../NPC"
 @onready var start_screen = $"../StartScreen"
@@ -55,8 +55,8 @@ func show_normal() -> void:
 func _on_information_pressed() -> void:
 	print("go to board")
 	hide_normal()
-	anim_player.play("camera_tilt_to_board")
-	await anim_player.animation_finished
+	anim_tilt_to_board.play("camera_tilt_to_board")
+	await anim_tilt_to_board.animation_finished
 	show_notice_board.emit()
 
 

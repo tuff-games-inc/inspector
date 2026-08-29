@@ -1,6 +1,9 @@
 extends Node3D
 
-@onready var anim_player = $"../Camera3D/AnimationPlayer"
+@onready var anim_npc_deny = $"../Camera3D/AnimNPCDeny"
+@onready var anim_npc_move_success = $"../Camera3D/AnimNPCMoveSuccess"
+@onready var anim_npc_move_to_counter = $"../Camera3D/AnimNPCMoveToCounter"
+@onready var anim_npc_kill = $"../Camera3D/AnimNPCKillsYou"
 @export var entity01:PackedScene  = load("res://entities/entity01.tscn")
 @export var entity02:PackedScene = load("res://entities/entity02.tscn")
 @export var entity03:PackedScene = load("res://entities/entity03.tscn")
@@ -62,8 +65,8 @@ func entity_spawn() -> void:
 	await deny_audio_node1.finished
 	deny_audio_node2.play()
 	door_deny.texture = open_door_texture
-	anim_player.play("npc_move_to_counter")
-	await anim_player.animation_finished
+	anim_npc_move_to_counter.play("npc_move_to_counter")
+	await anim_npc_move_to_counter.animation_finished
 	update_board.emit(npc.Name, npc.DateOfBirth, npc.HasPermit, npc.Occupation)
 	deny_audio_node1.play()
 	await deny_audio_node1.finished
@@ -83,8 +86,8 @@ func _replyHandler(outcome: bool) -> void:
 			await accept_audio_node1.finished
 			accept_audio_node2.play()
 			door_accept.texture = open_door_texture
-			anim_player.play("npc_move_success")
-			await anim_player.animation_finished
+			anim_npc_move_success.play("npc_move_success")
+			await anim_npc_move_success.animation_finished
 			accept_audio_node1.play()
 			await accept_audio_node1.finished
 			accept_audio_node2.play()
@@ -98,8 +101,8 @@ func _replyHandler(outcome: bool) -> void:
 			await deny_audio_node1.finished
 			deny_audio_node2.play()
 			door_deny.texture = open_door_texture
-			anim_player.play("npc_deny")
-			await anim_player.animation_finished
+			anim_npc_deny.play("npc_deny")
+			await anim_npc_deny.animation_finished
 			deny_audio_node1.play()
 			await deny_audio_node1.finished
 			deny_audio_node2.play()
@@ -113,8 +116,8 @@ func _replyHandler(outcome: bool) -> void:
 			await deny_audio_node1.finished
 			deny_audio_node2.play()
 			door_deny.texture = open_door_texture
-			anim_player.play("npc_deny")
-			await anim_player.animation_finished
+			anim_npc_deny.play("npc_deny")
+			await anim_npc_deny.animation_finished
 			deny_audio_node1.play()
 			await deny_audio_node1.finished
 			deny_audio_node2.play()
@@ -126,8 +129,8 @@ func _replyHandler(outcome: bool) -> void:
 			isSpawned = false
 			if isKiller:
 				door_accept.texture = open_door_texture
-				anim_player.play("npc_move_success")
-				await anim_player.animation_finished
+				anim_npc_move_success.play("npc_move_success")
+				await anim_npc_move_success.animation_finished
 				accept_audio_node1.play()
 				await accept_audio_node1.finished
 				accept_audio_node2.play()
@@ -141,8 +144,8 @@ func _replyHandler(outcome: bool) -> void:
 				await accept_audio_node1.finished
 				accept_audio_node2.play()
 				door_accept.texture = open_door_texture
-				anim_player.play("npc_move_success")
-				await anim_player.animation_finished
+				anim_npc_move_success.play("npc_move_success")
+				await anim_npc_move_success.animation_finished
 				accept_audio_node1.play()
 				await accept_audio_node1.finished
 				accept_audio_node2.play()
@@ -161,6 +164,6 @@ func kill_player() -> void:
 	right_booth_door.texture = open_door_texture
 	killer.visible = true
 	hide_gui.emit()
-	anim_player.play("npc_kills_you")
-	await anim_player.animation_finished
+	anim_npc_kill.play("npc_kills_you")
+	await anim_npc_kill.animation_finished
 	game_over.emit()
