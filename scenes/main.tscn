@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://6yu7ntle3u1u" path="res://scripts/npc_handler.gd" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://67vgvc47o3fh" path="res://assets/pencil_holder.png" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://cwt2yv7st3r2q" path="res://assets/door_normal.png" id="7_4c57u"]
-[ext_resource type="Texture2D" uid="uid://caa8wtt1nfdok" path="res://icon.svg" id="7_5vw27"]
+[ext_resource type="Texture2D" uid="uid://3hp4cgydnvo8" path="res://assets/purple_bean.png" id="7_dp3eg"]
 [ext_resource type="AudioStream" uid="uid://ccxflm48cruap" path="res://assets/doormove2.wav" id="8_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://dbm2e8wyqxg4v" path="res://assets/door_wrong_way.png" id="9_dg77c"]
 [ext_resource type="AudioStream" uid="uid://bq1kqnumutx61" path="res://assets/doorstop5.wav" id="9_jbj1t"]
@@ -554,9 +554,11 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+transparency = 1
 albedo_color = Color(0.58577716, 0.0013803899, 0.7481989, 1)
-albedo_texture = ExtResource("7_5vw27")
-uv1_scale = Vector3(5.06, 5.06, 5.06)
+albedo_texture = ExtResource("7_dp3eg")
+uv1_offset = Vector3(-0.23, 0, 0)
+texture_filter = 0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4c57u"]
 
@@ -788,7 +790,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5983496, 1.0064503, -4.332
 script = ExtResource("5_lquwl")
 
 [node name="killer" type="MeshInstance3D" parent="NPC" unique_id=1698992714]
-visible = false
 material_override = SubResource("StandardMaterial3D_kek77")
 mesh = SubResource("CapsuleMesh_4c57u")
 

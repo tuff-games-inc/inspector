@@ -107,8 +107,17 @@ texture_hover = ExtResource("13_fjxhm")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="RestartButton" type="Button" parent="CanvasLayer" unique_id=1892187704]
+offset_left = 825.0
+offset_top = 612.00006
+offset_right = 890.0
+offset_bottom = 643.00006
+scale = Vector2(3.81, 3.81)
+text = "Restart"
+
 [connection signal="pressed" from="CanvasLayer/Accept" to="." method="_on_accept_pressed"]
 [connection signal="pressed" from="CanvasLayer/Next" to="." method="_on_next_pressed"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Deny" to="." method="_on_deny_pressed"]
 [connection signal="pressed" from="CanvasLayer/Information" to="." method="_on_information_pressed"]
+[connection signal="pressed" from="CanvasLayer/RestartButton" to="." method="_on_restart_button_pressed"]

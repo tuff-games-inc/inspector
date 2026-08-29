@@ -34,7 +34,7 @@ var possible_entities: Array[PackedScene] = [entity01, entity02, entity03, entit
 signal hide_gui()
 signal change_score(direction: bool)
 signal game_over()
-signal update_board(name, dob, permit, occupation)
+signal update_board(name, dob, permit, occupation, id)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -70,7 +70,7 @@ func entity_spawn() -> void:
 	door_deny.texture = open_door_texture
 	anim_npc_move_to_counter.play("npc_move_to_counter")
 	await anim_npc_move_to_counter.animation_finished
-	update_board.emit(npc.Name, npc.DateOfBirth, npc.HasPermit, npc.Occupation)
+	update_board.emit(npc.Name, npc.DateOfBirth, npc.HasPermit, npc.Occupation, npc.id)
 	deny_audio_node1.play()
 	await deny_audio_node1.finished
 	deny_audio_node2.play()

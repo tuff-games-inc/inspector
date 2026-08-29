@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di8j4hbn67poa"
-path="res://.godot/imported/blue_bean.png-3a6aa47c159a59fdce7a9dba8c7febe5.ctex"
+uid="uid://tinuihlmi4oy"
+path="res://.godot/imported/entity03_mugshot.png-1d92b6114b3abec3206d3ee45ef9c6df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blue_bean.png"
-dest_files=["res://.godot/imported/blue_bean.png-3a6aa47c159a59fdce7a9dba8c7febe5.ctex"]
+source_file="res://assets/entity03_mugshot.png"
+dest_files=["res://.godot/imported/entity03_mugshot.png-1d92b6114b3abec3206d3ee45ef9c6df.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

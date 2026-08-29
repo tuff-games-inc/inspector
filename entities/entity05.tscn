@@ -13,6 +13,7 @@ script/source = "extends CharacterBody3D
 @export var BenefitsCitizens = false
 @export var HasPermit = false
 @export var WillKillYou = true # only use true for entity 3
+@export var id = 5
 "
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sbms0"]

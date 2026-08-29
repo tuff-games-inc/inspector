@@ -42,6 +42,8 @@ func hide_normal() -> void:
 	$CanvasLayer/Next.visible = false
 	$CanvasLayer/Points.visible = false
 	$CanvasLayer/GameOver.visible = false
+	$CanvasLayer/RestartButton.visible = false
+	$CanvasLayer/RestartButton.disabled = true
 
 func show_normal() -> void:
 	$CanvasLayer.visible = true
@@ -100,6 +102,13 @@ func _game_over() -> void:
 		$CanvasLayer/GameOver.text = gameovertext % points
 		$CanvasLayer.visible = true
 		$CanvasLayer/GameOver.visible = true
+	$CanvasLayer/RestartButton.visible = true
+	$CanvasLayer/RestartButton.disabled = false
 
 func start() -> void:
 	$CanvasLayer/Timer.start()
+
+
+func _on_restart_button_pressed() -> void:
+	print("resetting scene")
+	get_tree().reload_current_scene()
