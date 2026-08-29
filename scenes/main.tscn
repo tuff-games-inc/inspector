@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://bq1kqnumutx61" path="res://assets/doorstop5.wav" id="9_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://bf8axk8422bvy" path="res://assets/door_warning.png" id="10_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://cxes4g28p6obf" path="res://assets/weapons_rack.png" id="11_vivmo"]
+[ext_resource type="Texture2D" uid="uid://dd2knskvac6x1" path="res://assets/keycard_reader.png" id="14_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://dfkveiful50j5" path="res://assets/next-text.png" id="14_w48qg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
@@ -908,6 +909,11 @@ transform = Transform3D(-1.385651e-07, 0, 3.17, 0, 3.17, 0, -3.17, 0, -1.385651e
 double_sided = false
 texture_filter = 0
 texture = ExtResource("11_vivmo")
+
+[node name="KeycardReader" type="Sprite3D" parent="Building" unique_id=991214968]
+transform = Transform3D(-5.7480477e-08, 0, 1.315, 0, 1.315, 0, -1.315, 0, -5.7480477e-08, 6.7044578, 1.2567809, -0.66112876)
+texture_filter = 0
+texture = ExtResource("14_dp3eg")
 
 [node name="Counter" type="Node" parent="." unique_id=216640273]
 
