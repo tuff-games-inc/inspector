@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://u1gxo2h6bxmd" path="res://scripts/gui_handler.gd" id="1_aj78p"]
 [ext_resource type="Texture2D" uid="uid://besijxn36vh0e" path="res://assets/accept_button.png" id="2_7m30q"]
+[ext_resource type="FontFile" uid="uid://ch024tpiwh3b2" path="res://HomeVideo-Regular.ttf" id="2_aekng"]
 [ext_resource type="Texture2D" uid="uid://cbugqo3xmg8d5" path="res://assets/next_button.png" id="2_li6nh"]
 [ext_resource type="Texture2D" uid="uid://dhcx8ogoxcf36" path="res://assets/accept_button_pressed.png" id="3_vmoib"]
 [ext_resource type="Texture2D" uid="uid://cfywqo6rtsfut" path="res://assets/accept_button_hover.png" id="4_ktdu2"]
@@ -34,6 +35,7 @@ offset_top = 30.0
 offset_right = 146.0
 offset_bottom = 85.0
 scale = Vector2(1.655, 1.655)
+theme_override_fonts/font = ExtResource("2_aekng")
 text = "Day Y"
 label_settings = SubResource("LabelSettings_chrx7")
 metadata/_edit_use_anchors_ = true
@@ -49,17 +51,20 @@ offset_bottom = 788.0
 scale = Vector2(1.655, 1.655)
 text = "something"
 label_settings = SubResource("LabelSettings_chrx7")
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="GameOver" type="Label" parent="CanvasLayer" unique_id=112686544]
 offset_left = 773.0
-offset_top = 425.0
+offset_top = 419.00003
 offset_right = 1001.0
-offset_bottom = 480.0
+offset_bottom = 532.0
 scale = Vector2(1.655, 1.655)
+theme_override_fonts/font = ExtResource("2_aekng")
 text = "Game Over!
 Score:"
 label_settings = SubResource("LabelSettings_chrx7")
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Points" type="Label" parent="CanvasLayer" unique_id=1857162427]
@@ -68,8 +73,10 @@ offset_top = 32.0
 offset_right = 1581.0
 offset_bottom = 87.0
 scale = Vector2(1.655, 1.655)
+theme_override_fonts/font = ExtResource("2_aekng")
 text = "Points: X"
 label_settings = SubResource("LabelSettings_chrx7")
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Accept" type="TextureButton" parent="CanvasLayer" unique_id=2054281146]
@@ -121,11 +128,12 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="RestartButton" type="Button" parent="CanvasLayer" unique_id=1892187704]
-offset_left = 825.0
-offset_top = 612.00006
-offset_right = 890.0
-offset_bottom = 643.00006
+offset_left = 819.0
+offset_top = 614.00006
+offset_right = 894.0
+offset_bottom = 645.00006
 scale = Vector2(3.81, 3.81)
+theme_override_fonts/font = ExtResource("2_aekng")
 text = "Restart"
 
 [connection signal="pressed" from="CanvasLayer/Accept" to="." method="_on_accept_pressed"]
