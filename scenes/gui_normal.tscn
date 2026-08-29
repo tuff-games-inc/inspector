@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://u1gxo2h6bxmd" path="res://scripts/gui_handler.gd" id="1_aj78p"]
 [ext_resource type="Texture2D" uid="uid://besijxn36vh0e" path="res://assets/accept_button.png" id="2_7m30q"]
-[ext_resource type="FontFile" uid="uid://ch024tpiwh3b2" path="res://HomeVideo-Regular.ttf" id="2_aekng"]
+[ext_resource type="FontFile" path="res://HomeVideo-Regular.ttf" id="2_aekng"]
 [ext_resource type="Texture2D" uid="uid://cbugqo3xmg8d5" path="res://assets/next_button.png" id="2_li6nh"]
 [ext_resource type="Texture2D" uid="uid://dhcx8ogoxcf36" path="res://assets/accept_button_pressed.png" id="3_vmoib"]
 [ext_resource type="Texture2D" uid="uid://cfywqo6rtsfut" path="res://assets/accept_button_hover.png" id="4_ktdu2"]
