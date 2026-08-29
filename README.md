@@ -1,4 +1,6 @@
-# cool-game
+# Inspector
+
+(originally named _'cool-game'_)
 
 A game for the [Brackeys Game Jam 2026.2](https://itch.io/jam/brackeys-16)!
 
@@ -8,11 +10,17 @@ A game by tuff games inc - proudly open source, right on this repo!.
 
 _Made With Godot 4.7.2_
 
+Incredible credit to [Paper, Please](https://papersplea.se/), the indie game that inspired us to make this!
+
 ## Assets
 
 All art has been made / drawn by us!
 
-SFX credit to ...
+SFX credit:
+
+- [doormove2](/assets/doormove2.wav) & [doormove2](/assets/doorstop5.wav), [Half Life](https://www.half-life.com/en/home/)
+
+- [keycard](/assets/keycard.wav), [Pixabay](https://pixabay.com/sound-effects/film-special-effects-keycard-accept-410380/)
 
 ## Screenshots
 
