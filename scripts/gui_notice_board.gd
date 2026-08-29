@@ -1,7 +1,7 @@
 extends Control
 
 @onready var main_gui = $"../GUI"
-@onready var anim_player = $"../AnimationPlayer"
+@onready var anim_tilt_main = $"../AnimTiltToMain"
 @onready var npc_handler = $"../../NPC"
 
 signal show_normal()
@@ -35,9 +35,9 @@ func _hide_board() -> void:
 
 func _on_back_pressed() -> void:
 	print("go to normal pos")
-	anim_player.play("camera_tilt_to_main")
+	anim_tilt_main.play("camera_tilt_to_main")
 	_hide_board()
-	await anim_player.animation_finished
+	await anim_tilt_main.animation_finished
 	print("animation finished")
 	show_normal.emit()
 	
