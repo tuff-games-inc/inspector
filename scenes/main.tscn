@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cxes4g28p6obf" path="res://assets/weapons_rack.png" id="11_vivmo"]
 [ext_resource type="Texture2D" uid="uid://dd2knskvac6x1" path="res://assets/keycard_reader.png" id="14_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://dfkveiful50j5" path="res://assets/next-text.png" id="14_w48qg"]
+[ext_resource type="AudioStream" uid="uid://bx6fon47r5it3" path="res://assets/keycard.wav" id="15_0ld40"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -177,6 +178,18 @@ tracks/11/keys = {
 "update": 0,
 "values": [Vector3(0, -0.45403516, 0)]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Building/KeycardReader/AudioStreamPlayer3D:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_h2yge"]
 resource_name = "camera_tilt_to_board"
@@ -320,6 +333,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -0.45403516, 0), Vector3(0, -0.45403516, 0), Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Building/KeycardReader/AudioStreamPlayer3D:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_muem4"]
@@ -922,6 +947,9 @@ texture = ExtResource("11_vivmo")
 transform = Transform3D(-5.7480477e-08, 0, 1.315, 0, 1.315, 0, -1.315, 0, -5.7480477e-08, 6.7044578, 1.2567809, -0.66112876)
 texture_filter = 0
 texture = ExtResource("14_dp3eg")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Building/KeycardReader" unique_id=1371088356]
+stream = ExtResource("15_0ld40")
 
 [node name="Counter" type="Node" parent="." unique_id=216640273]
 
