@@ -12,6 +12,9 @@ _Made With Godot 4.7.2_
 
 Incredible credit to [Paper, Please](https://papersplea.se/), the indie game that inspired us to make this!
 
+> [!NOTE]
+> Everything was hand-drawn except the font used in the UI (non-pixel art) and the sound effects. No chunks of code were fully written using AI; it was only used for debugging/exporting assistance.
+
 ## Assets
 
 All art has been made / drawn by us!
@@ -43,3 +46,5 @@ Font credits:
 - [hippogriff101](https://github.com/hippogriff101) - [website](https://freddieyershon.co.uk), [itch.io](https://hippogriff101.itch.io/)
 
 - [raspberries05](https://github.com/raspberries05)
+
+:)
