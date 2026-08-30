@@ -13,7 +13,7 @@ _Made With Godot 4.7.2_
 Incredible credit to [Paper, Please](https://papersplea.se/), the indie game that inspired us to make this!
 
 > [!NOTE]
-> Everything was hand drawn except the font used in the UI (non pixel art) and the sound effects. No chunks of code were fully written using AI, only debugging / exporting assistance.
+> Everything was hand-drawn except the font used in the UI (non-pixel art) and the sound effects. No chunks of code were fully written using AI; it was only used for debugging/exporting assistance.
 
 ## Assets
 
