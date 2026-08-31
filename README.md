@@ -45,6 +45,6 @@ Font credits:
 
 - [hippogriff101](https://github.com/hippogriff101) - [website](https://freddieyershon.co.uk), [itch.io](https://hippogriff101.itch.io/)
 
-- [raspberries05](https://github.com/raspberries05)
+- [raspberries05](https://github.com/raspberries05) - [itch.io](https://raspberries05.itch.io)
 
 :)
